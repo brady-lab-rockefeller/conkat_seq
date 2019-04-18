@@ -12,7 +12,7 @@ from collections import defaultdict
 from statsmodels.stats.multitest import multipletests
 
 from helpers import log
-from helpers import int_to_position
+from helpers import int_to_well_position
 from helpers import makeFasta
 from helpers import execute
 
@@ -222,7 +222,7 @@ def flag_barcode_swap_edges(G,pval=0.05,N=500,verb=False):
         #observed 
         o = pd.DataFrame()
         o['well'] = wells
-        o['platePos'] = o.well.apply(lambda x: int_to_position(x) )
+        o['platePos'] = o.well.apply(lambda x: int_to_well_position(x) )
         o['plate'] = o.well.apply(lambda x: x / 384 )
         o['rowPos'] = o.platePos.apply(lambda x: x[0])
         o['rowPos'] = 'R' + o['rowPos'].astype(str) + '_P' + o['plate'].astype(str)
@@ -428,4 +428,61 @@ def merge_similar_nodes(G,cluster_id=0.9,min_net_size=3,threads=20,verb=False,ru
             del T.node[node]['contraction']
     
     return (contraction_df,T)
+
+def clean_host_reads(input_file_fullpath, host_ref_fullpath, 
+                     output_file_fullpath, maxindel=10, minid=0.95, 
+                     remove_files=True, verbose=False, run=True):
+    
+    """Wrapper for the removal of host mapped reads 
+
+    Dependencies:
+        BBMap (https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbmap-guide/)
+        samtools (https://github.com/samtools/)
+
+    Parameters:
+        input_file_fullpath (str):  
+        host_ref_fullpath (str):
+        output_file_fullpath (str):
+        maxindel (int) : 
+        minid (float) : 
+        remove_files (bool) :(default is True)
+        verbose (bool) :(default is False)
+        run (bool): (default is True)
+        
+    Returns: 
+        
+    
+    Raises:
+        IOError: An error occurred accessing the bigtable.Table object.
+    """
+    
+    sufix = os.path.splitext(input_file_fullpath)[1]
+    bam_file_fullpath = input_file_fullpath.replace(sufix,'.bam')
+    
+    cmd = ('bbmap.sh '
+           'in=%s ' 
+           'ref=%s '
+           'outu=%s '
+           'maxindel=%s '
+           'minid=%s '
+           % (input_file_fullpath,host_ref_fullpath,bam_file_fullpath,maxindel,minid)
+          )
+    
+    if verbose:
+        print('Cleaning host reads using %s...'% host_ref_fullpath )
+        print(cmd)
+
+    if run:
+        execute(cmd,screen=verbose)
+    
+    cmd = ('samtools fasta %s > %s' % (bam_file_fullpath, output_file_fullpath) )
+    if verbose:
+        print(cmd)
+
+    if run:
+        execute(cmd,screen=verbose)
+
+    if remove_files:
+        os.remove(bam_file_fullpath)
+
 
