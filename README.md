@@ -4,14 +4,14 @@ conkat_seq Manual
 Table of Contents
 -----------------
 
-- [Introduction](#introduction)
+- [Introduction](#abstract)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-	1- [3 modules](##)
-  - [3 modules](##)
+- [3 modules](##)
+  - [](##)
 - [Repeat graph](#graph)
-- [benchmarks](#performance)
+- [benchmark](#performance)
 - [Algorithm Description](#algorithm)
 
 ## <a name="usage"></a> Usage
@@ -24,7 +24,7 @@ usage: conkat_seq (--pacbio-raw | --pacbio-corr | --nano-raw |
 	     [--meta] [--plasmids] [--no-trestle] [--debug]
 	     [--version] [--help] [--resume]
 
-
+```
 
 
 
