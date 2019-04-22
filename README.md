@@ -1,4 +1,4 @@
-conkat_seq manual
+conkat_seq Manual
 =================
 
 Table of Contents
