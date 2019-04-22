@@ -8,7 +8,7 @@ Table of Contents
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-	- [3 modules](##)
+	1- [3 modules](##)
   - [3 modules](##)
 - [Repeat graph](#graph)
 - [benchmarks](#performance)
