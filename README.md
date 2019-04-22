@@ -5,10 +5,10 @@ Table of Contents
 -----------------
 
 - [Introduction](#abstract)
-- [Requirements](#examples)
-- [Installation](#inputdata)
-- [Parameter Descripti](#parameters)
-- [Flye output](#output)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#parameters)
+- [3 modules](##)
 - [Repeat graph](#graph)
-- [Flye benchmarks](#performance)
+- [benchmarks](#performance)
 - [Algorithm Description](#algorithm)
