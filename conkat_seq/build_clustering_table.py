@@ -85,8 +85,6 @@ if __name__ == "__main__":
     remove_files = args.remove_files
     ###
 
-
-
     log('Building clustering table from amplicon data...')
     
     merged_sorted_output_file = OUTPATH + sample_name + '_SORTED.fna'
@@ -98,7 +96,8 @@ if __name__ == "__main__":
             ensure_dir(OUTPATH + dirname)
 
     demux_files = [f for f in os.listdir(INPATH) if os.path.isfile(os.path.join(INPATH, f))]
-
+    log('%s files found...' % len(demux_files))
+    
     for i,filename in enumerate(demux_files):
         if (i % 100 == 0) :
             log('%s files processed...' % i)
@@ -159,7 +158,8 @@ if __name__ == "__main__":
     if host_path:
         merged_output_host_clean_file = merged_output_file.replace('.fna','_HOST_CLEAN.fna')
         log('Mapping reads to refrence file -> %s...' % host_path )
-        clean_host_reads(merged_output_file, host_path, merged_output_host_clean_file)
+        clean_host_reads(merged_output_file, host_path, 
+            merged_output_host_clean_file,threads=threads)
         merged_output_file = merged_output_host_clean_file
     
     if remove_files:
@@ -171,7 +171,10 @@ if __name__ == "__main__":
                 log('Unable to remove %s...' % (OUTPATH+dirname))
             
     
-    
+    if not (os.path.isfile(merged_output_file)):
+        log('Unable to find merged file at %s...' % merged_output_file)
+        sys.exit()
+
     #sortbylength (note: equal length reads are sorted by number of reads ) 
     log('Sorting merged reads...')       
     cmd = ('vsearch '

@@ -7,9 +7,11 @@ import tempfile
 import matplotlib.pyplot as plt
 from helpers import calc_fisher
 import numpy as np
+import random
 from itertools import combinations
 from collections import defaultdict
 from statsmodels.stats.multitest import multipletests
+
 
 from helpers import log
 from helpers import int_to_well_position
@@ -242,7 +244,7 @@ def flag_barcode_swap_edges(G,pval=0.05,N=500,verb=False):
             for i in range(int(N)):
                 s = pd.DataFrame()
                 s['well'] = random.sample(range(384*6), Nwells)
-                s['platePos'] = s.well.apply(lambda x: toPos(x) )
+                s['platePos'] = s.well.apply(lambda x: int_to_well_position(x) )
                 s['plate'] = s.well.apply(lambda x: x / 384 )
                 s['rowPos'] = s.platePos.apply(lambda x: x[0])
                 s['rowPos'] = 'R' + s['rowPos'].astype(str) + '_P' + s['plate'].astype(str)
@@ -431,7 +433,7 @@ def merge_similar_nodes(G,cluster_id=0.9,min_net_size=3,threads=20,verb=False,ru
 
 def clean_host_reads(input_file_fullpath, host_ref_fullpath, 
                      output_file_fullpath, maxindel=10, minid=0.95, 
-                     remove_files=True, verbose=False, run=True):
+                     remove_files=True, verbose=False, threads=20, run=True):
     
     """Wrapper for the removal of host mapped reads 
 
@@ -465,22 +467,23 @@ def clean_host_reads(input_file_fullpath, host_ref_fullpath,
            'outu=%s '
            'maxindel=%s '
            'minid=%s '
-           % (input_file_fullpath,host_ref_fullpath,bam_file_fullpath,maxindel,minid)
+           't=%s '
+           % (input_file_fullpath,host_ref_fullpath,bam_file_fullpath,maxindel,minid,threads)
           )
     
+    print('Cleaning host reads using %s...'% host_ref_fullpath )
     if verbose:
-        print('Cleaning host reads using %s...'% host_ref_fullpath )
         print(cmd)
 
     if run:
-        execute(cmd,screen=verbose)
+        execute(cmd,screen=True)
     
     cmd = ('samtools fasta %s > %s' % (bam_file_fullpath, output_file_fullpath) )
     if verbose:
         print(cmd)
 
     if run:
-        execute(cmd,screen=verbose)
+        execute(cmd,screen=True)
 
     if remove_files:
         os.remove(bam_file_fullpath)
