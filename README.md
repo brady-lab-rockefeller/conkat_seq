@@ -4,11 +4,11 @@ conkat_seq Manual
 Table of Contents
 -----------------
 
-- [Introduction](#abstract)
+- [Introduction](#introduction)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-- [3 modules](##)
+	- [3 modules](##)
   - [3 modules](##)
 - [Repeat graph](#graph)
 - [benchmarks](#performance)
