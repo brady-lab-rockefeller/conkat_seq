@@ -9,6 +9,7 @@ Table of Contents
 - [Installation](#installation)
 - [Usage](#parameters)
 - [3 modules](##)
+  - [3 modules](##)
 - [Repeat graph](#graph)
 - [benchmarks](#performance)
 - [Algorithm Description](#algorithm)
