@@ -1,5 +1,5 @@
-conkat_seq Manual
-=================
+Welcome to the ConkatSeq Documentation Manual
+=============================================
 
 Table of Contents
 -----------------
