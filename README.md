@@ -6,7 +6,7 @@ Welcome to the ConkatSeq Documentation Manual
 Table of Contents
 -----------------
 
-- [About](#introduction)
+- [About](#about)
   - [Concept](#concept)
   - [Architecture](#architecture)
 - [Input](#input)
@@ -20,10 +20,10 @@ Table of Contents
 - [benchmark](#performance)
 - [Algorithm Description](#algorithm)
 
-## <a name="Introduction"></a> Introduction
+## <a name="about"></a> About
 
 
-## <a name="Input"></a> Input
+## <a name="concept"></a> Concept
 
 
 
