@@ -11,14 +11,15 @@ Table of Contents
   - [Algorithm](#algorithm)
 - [Input](#input)
 - [Output](#output)
-- [Requirements](#requirements)
 - [Installation](#installation)
+  - [Hardware dependencies](#hardware)
+  - [Software dependencies](#software)
+  - [Install](#install)
+  
 - [Usage](#usage)
-- [3 modules](##)
-  - [](##)
-- [Repeat graph](#graph)
-- [benchmark](#performance)
-- [Algorithm Description](#algorithm)
+  - [1. Build](##)
+  - [Repeat graph](#graph)
+  - [benchmark](#performance)
 
 ## <a name="about"></a> Description
 
@@ -28,11 +29,11 @@ Table of Contents
 
 ## <a name="input"></a> Input
 
-Illumina amplicon sequencing data file(s) in FASTQ format.
+Illumina amplicon sequencing data file(s) in FASTA format.
 
 ### NOTE: The amplicon sequencing data file(s) must be demultiplexed or split into its corresponding barcoded number of well plate. 
 
-#### Ex: If the sequencing was performed on a 384 well plate, the demultiplexed data will consist of 384 individual FASTQ files representing each barcoded sample well in the plate.
+#### Ex: If the sequencing was performed on a 384 well plate, the demultiplexed data will consist of 384 individual FASTA files representing each barcoded sample well in the plate.
 
 ## <a name="input"></a> Output
 
