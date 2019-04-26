@@ -17,9 +17,9 @@ Table of Contents
   - [Install](#install)
   
 - [Usage](#usage)
-  1. [Build](##)
-  - [Repeat graph](#graph)
-  - [benchmark](#performance)
+  1. [Generate clustering table](##)
+  2. [Polish clustering table](#graph)
+  3. [Compute and Graph clustering table](#performance)
 
 ## <a name="about"></a> Description
 
