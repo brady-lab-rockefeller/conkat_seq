@@ -4,7 +4,9 @@ conkat_seq Manual
 Table of Contents
 -----------------
 
-- [Introduction](#abstract)
+- [ConkatSeq](#conkateSeq)
+- [Input](#input)
+- [Output](#output)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -14,15 +16,10 @@ Table of Contents
 - [benchmark](#performance)
 - [Algorithm Description](#algorithm)
 
-## <a name="usage"></a> Usage
+## <a name="ConkatSeq"></a> ConkatSeq
 
 ```
-usage: conkat_seq (--pacbio-raw | --pacbio-corr | --nano-raw |
-	     --nano-corr | --subassemblies) file1 [file_2 ...]
-	     --genome-size SIZE --out-dir PATH
-	     [--threads int] [--iterations int] [--min-overlap int]
-	     [--meta] [--plasmids] [--no-trestle] [--debug]
-	     [--version] [--help] [--resume]
+usage: conkat_seq 
 
 ```
 
