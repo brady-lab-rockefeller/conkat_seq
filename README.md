@@ -20,10 +20,10 @@ Table of Contents
 - [benchmark](#performance)
 - [Algorithm Description](#algorithm)
 
-### <a name="about"></a> About
+## <a name="about"></a> About
 
 
-#### <a name="concept"></a> Concept
+### <a name="concept"></a> Concept
 
 
 
