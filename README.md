@@ -17,7 +17,7 @@ Table of Contents
   - [Install](#install)
   
 - [Usage](#usage)
-  - [1. Build](##)
+  1. [Build](##)
   - [Repeat graph](#graph)
   - [benchmark](#performance)
 
