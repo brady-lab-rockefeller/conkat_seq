@@ -32,6 +32,14 @@ Table of Contents
 
 ## <a name="input"></a> Input
 
+## <a name="input"></a> Output
+
+## <a name="input"></a> Installation
+
+## <a name="input"></a> Usage
+
+## <a name="input"></a> Example
+
 Illumina amplicon sequencing data file(s) in FASTA format.
 
 ### NOTE: The amplicon sequencing data file(s) must be demultiplexed or split into its corresponding barcoded number of well plate. 
