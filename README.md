@@ -34,7 +34,7 @@ Table of Contents
 
 Illumina amplicon sequencing data file(s) in FASTA format.
 
-### NOTE: The amplicon sequencing data file(s) must be demultiplexed or split into its corresponding barcoded number of well plate. 
+### NOTE: The amplicon sequencing data file(s) must be demultiplexed or split into its corresponding barcoded numbers of well plate. 
 
 #### Ex: If the sequencing was performed on a 384 well plate, the demultiplexed data will consist of 384 individual FASTA files representing each barcoded sample well in the plate.
 
