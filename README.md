@@ -21,6 +21,9 @@ Table of Contents
   2. [Polish clustering table](#graph)
   3. [Compute and Graph clustering table](#performance)
 
+- [Example](#example)
+  
+
 ## <a name="about"></a> Description
 
 ### <a name="concept"></a> Concept
