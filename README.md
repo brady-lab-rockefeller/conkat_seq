@@ -17,9 +17,9 @@ Table of Contents
   - [Install](#install)
   
 - [Usage](#usage)
-  1. [Generate clustering table](##)
-  2. [Polish clustering table](#graph)
-  3. [Compute and Graph clustering table](#performance)
+  1. [Generate clustering table](#table)
+  2. [Polish clustering table](#polish)
+  3. [Compute and Graph clustering table](#graph)
 
 - [Example](#example)
   
@@ -50,7 +50,10 @@ Network graph of highly associated coccurence clusters in GraphML format.
 
 ## <a name="input"></a> Usage
 
+
+
 ## <a name="input"></a> Example
+
 
 https://rockefeller.app.box.com/s/rhrgw13ux6qdns0vax5i4cgyvgtfdyd7
 
