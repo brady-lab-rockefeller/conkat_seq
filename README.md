@@ -32,7 +32,7 @@ Table of Contents
 
 ## <a name="input"></a> Input
 
-## <a name="input"></a> Output
+## <a name="output"></a> Output
 
 ## <a name="input"></a> Installation
 
@@ -40,13 +40,15 @@ Table of Contents
 
 ## <a name="input"></a> Example
 
+## <a name="input"></a> Input
+
 Illumina amplicon sequencing data file(s) in FASTA format.
 
 ### NOTE: The amplicon sequencing data file(s) must be demultiplexed or split into its corresponding barcoded number of well plate. 
 
 #### Ex: If the sequencing was performed on a 384 well plate, the demultiplexed data will consist of 384 individual FASTA files representing each barcoded sample well in the plate.
 
-## <a name="input"></a> Output
+## <a name="output"></a> Output
 
 Network graph of highly associated coccurence clusters in GraphML format. 
 
