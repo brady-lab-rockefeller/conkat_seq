@@ -24,7 +24,7 @@ Table of Contents
 ## <a name="input"></a> Input
 
 |Script|Input|Description|Output|Description|
-|---|---|---|
+|---|---|---|---|---|
 |build_clustering.py||cluster|
 |filter_clustering.py|
 Illumina amplicon sequencing data file(s) in FASTA format.
