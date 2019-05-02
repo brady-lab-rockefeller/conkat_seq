@@ -25,9 +25,13 @@ Table of Contents
 
 |Script|Input|Description|Output|Description|
 |---|---|---|---|---|
-|build_clustering.py||cluster|
-|filter_clustering.py|
-|cluster|
+|build_clustering_table.py||Illumina amplicon sequencing data file(s) in FASTA format ### NOTE: The amplicon sequencing data file(s) must be demultiplexed or split into its corresponding barcoded numbers of well plate. 
+
+#### Ex: If the sequencing was performed on a 384 well plate, the demultiplexed data will consist of 384 individual FASTA files representing each barcoded sample well in the plate.
+|
+|filter_clustering_table.py| 
+|conkat_seq.py|
+
 Illumina amplicon sequencing data file(s) in FASTA format.
 
 ### NOTE: The amplicon sequencing data file(s) must be demultiplexed or split into its corresponding barcoded numbers of well plate. 
