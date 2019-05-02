@@ -1,14 +1,11 @@
-Welcome to the ConkatSeq Documentation Manual
-=============================================
+ConkatSeq Manual
+================
 
 #### ConkatSeq is a python program for concatenating amplicon sequencing data back to its chromosomal location in the genome. 
 
 Table of Contents
 -----------------
 
-- [Description](#about)
-  - [Concept](#concept)
-  - [Algorithm](#algorithm)
 - [Input](#input)
 - [Output](#output)
 - [Installation](#installation)
@@ -24,15 +21,10 @@ Table of Contents
 - [Example](#example)
   
 
-## <a name="about"></a> Description
-
-### <a name="concept"></a> Concept
-
-### <a name="algorithm"></a> Algorithm
-
 ## <a name="input"></a> Input
 
-demultiplex fasta files
+|Script|Input|Output|
+|---|---|---|
 
 
 Illumina amplicon sequencing data file(s) in FASTA format.
@@ -49,7 +41,7 @@ Network graph of highly associated coccurence clusters in GraphML format.
 
 ### <a name="hardware"></a> Hardware Dependencies
 
-ConkatSeq works in the following operating systems:
+Currently ConkatSeq works in the following operating systems:
 
   -MacOS
   -Unix
