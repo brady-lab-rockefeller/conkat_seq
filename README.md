@@ -23,11 +23,10 @@ Table of Contents
 
 ## <a name="input"></a> Input
 
-|Script|Input|Output|
+|Script|Input|Description|Output|Description|
 |---|---|---|
-|build_clustering.py|filter_clustering.py|cluster|
-
-
+|build_clustering.py||cluster|
+|filter_clustering.py|
 Illumina amplicon sequencing data file(s) in FASTA format.
 
 ### NOTE: The amplicon sequencing data file(s) must be demultiplexed or split into its corresponding barcoded numbers of well plate. 
