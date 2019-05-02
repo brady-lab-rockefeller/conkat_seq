@@ -1,7 +1,7 @@
 ConkatSeq Manual
 ================
 
-#### ConkatSeq is a python program for concatenating amplicon sequencing data back to its chromosomal location in the genome. 
+#### ConkatSeq is a python program for concatenating amplicon sequencing data back to its chromosomal location in the genome. (Niv describe) 
 
 Table of Contents
 -----------------
@@ -27,6 +27,7 @@ Table of Contents
 |---|---|---|---|---|
 |build_clustering.py||cluster|
 |filter_clustering.py|
+|cluster|
 Illumina amplicon sequencing data file(s) in FASTA format.
 
 ### NOTE: The amplicon sequencing data file(s) must be demultiplexed or split into its corresponding barcoded numbers of well plate. 
