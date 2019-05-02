@@ -46,6 +46,12 @@ Network graph of highly associated coccurence clusters in GraphML format.
 
 ### <a name="hardware"></a> Hardware Dependencies
 
+ConkatSeq works in the following operating systems:
+
+  -MacOS
+  -Unix
+  
+
 ### <a name="hardware"></a> Software Dependencies
 
 ## <a name="input"></a> Usage
