@@ -6,8 +6,7 @@ ConkatSeq Manual
 Table of Contents
 -----------------
 
-- [Input](#input)
-- [Output](#output)
+- [Data Input/Output](#inputandoutput)
 - [Installation](#installation)
   - [Hardware dependencies](#hardware)
   - [Software dependencies](#software)
@@ -21,7 +20,7 @@ Table of Contents
 - [Example](#example)
   
 
-## <a name="input"></a> Data Input/Output
+## <a name="inputandoutput"></a> Data Input/Output
 
 |**Script**|**Input**|**Description**|**Output**|**Description**|
 |---|---|---|---|---|
@@ -29,8 +28,6 @@ Table of Contents
 |**filter_clustering_table.py**| 
 |**conkat_seq.py**|
 
-
-## <a name="output"></a> Output
 
 Network graph of highly associated coccurence clusters in GraphML format. 
 
