@@ -22,7 +22,9 @@ Table of Contents
 
 ## <a name="inputandoutput"></a> Data Input/Output
 
-ConkatSeq uses three python scripts (build_clustering_table.py, filter_clustering_table.py, conkat_seq.py) to process demultiplexed amplicon sequencing data (FASTA format) and produce a network graph of highly associated coccurence sequence clusters (GraphML format).  <br/>
+
+ConkatSeq uses three python scripts (build_clustering_table.py, filter_clustering_table.py, conkat_seq.py) to process demultiplexed amplicon sequencing data (FASTA format) and produce a network graph of highly associated coccurence sequence clusters (GraphML format).  
+
 
 |**Script**|**Input**|**Description**|**Output**|**Description**|
 |---|---|---|---|---|
