@@ -22,6 +22,8 @@ Table of Contents
 
 ## <a name="inputandoutput"></a> Data Input/Output
 
+ConkatSeq uses three python scripts (build_clustering_table.py, filter_clustering_table.py, conkat_seq.py) to process demultiplexed amplicon sequencing data (FASTA format) and produce a network graph of highly associated coccurence sequence clusters (GraphML format).
+
 |**Script**|**Input**|**Description**|**Output**|**Description**|
 |---|---|---|---|---|
 |**build_clustering_table.py**|**1) FASTA sequences (Illumina amplicon sequencing data file(s))**| 1) The amplicon sequencing data file(s) must be demultiplexed or split into its corresponding barcoded numbers of well plate. <br/><br/> *Ex: If the sequencing was performed on a 384 well plate, the demultiplexed data will consist of 384 individual FASTA files representing each barcoded sample well in the plate.*|**1) (sample_name)_OTU.txt**  <br/><br/> **2) (sample_name)_OTU.fna** | **1)Domain clustering table** <br/><br/>  **2) Domain centroid sequences** 
@@ -29,7 +31,6 @@ Table of Contents
 |**conkat_seq.py**|
 
 
-Network graph of highly associated coccurence clusters in GraphML format. 
 
 ## <a name="input"></a> Installation
 
