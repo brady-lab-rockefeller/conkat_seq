@@ -39,7 +39,7 @@ ConkatSeq uses three python scripts (build_clustering_table.py, filter_clusterin
 
 
 |**Hardware**|**Software**|**Package Manager**|
-|---|---|---|---|---|
+|---|---|---|
 |**MacOS** <br/><br/> **Linux/Unix**|scipy|**1) (sample_name)_OTU.txt**  <br/><br/> **2) (sample_name)_OTU.fna** | **1)Domain clustering table** <br/><br/>  **2) Domain centroid sequences** 
 |**Linux/Unix**| 
 ||
