@@ -40,7 +40,7 @@ ConkatSeq uses three python scripts (build_clustering_table.py, filter_clusterin
 
 |**Hardware**|**Software**|**Package Manager**|
 |---|---|---|
-|**1) Linux** <br/><br/> **(Any Mac or Unix OS machine)**|**1) [python 2.7](https://www.python.org/download/releases/2.7/)**  <br/><br/>  **2) [biopython](https://biopython.org/)** <br/><br/>  **[pandas](https://pandas.pydata.org)/** <br/><br/> **scipy** <br/><br/>  **matplotlib** <br/><br/> **statsmodel** <br/><br/> **networkx** <br/><br/> **vsearch**  | **conda** 
+|**1) Linux** <br/><br/> **(Any Mac or Unix OS machine)**|**1) [python 2.7](https://www.python.org/download/releases/2.7/)**  <br/><br/>  **2) [biopython](https://biopython.org/)** <br/><br/>  **3) [pandas](https://pandas.pydata.org)** <br/><br/> **4) [scipy](https://www.scipy.org/)** <br/><br/>  **5) [matplotlib](https://matplotlib.org/)** <br/><br/> **[statsmodel  (https://www.statsmodels.org/stable/index.html)** <br/><br/> **networkx** <br/><br/> **vsearch**  | **conda** 
 
 ### <a name="hardware"></a> Software Dependencies
 
