@@ -40,7 +40,7 @@ ConkatSeq uses three python scripts (build_clustering_table.py, filter_clusterin
 
 |**Hardware**|**Software**|**Package Manager**|
 |---|---|---|
-|**1) Linux** <br/><br/> **(Any Mac or Unix OS machine)**|**1) [python 2.7](https://www.python.org/download/releases/2.7/)**  <br/><br/>  **2) [biopython](https://biopython.org/)** <br/><br/>  **3) [pandas](https://pandas.pydata.org)** <br/><br/> **4) [scipy](https://www.scipy.org/)** <br/><br/>  **5) [matplotlib](https://matplotlib.org/)** <br/><br/> **[statsmodel  (https://www.statsmodels.org/stable/index.html)** <br/><br/> **networkx** <br/><br/> **vsearch**  | **conda** 
+|**1) [Linux](https://www.linux.org/pages/download/)** <br/><br/> **(Any Mac or Unix OS machine)**|**1) [python 2.7](https://www.python.org/download/releases/2.7/)**  <br/><br/>  **2) [biopython](https://biopython.org/)** <br/><br/>  **3) [pandas](https://pandas.pydata.org)** <br/><br/> **4) [scipy](https://www.scipy.org/)** <br/><br/>  **5) [matplotlib](https://matplotlib.org/)** <br/><br/> **6) [statsmodel]  (https://www.statsmodels.org/stable/index.html)** <br/><br/> **7) [networkx](https://networkx.github.io/) ** <br/><br/>8) **8) [vsearch](https://github.com/torognes/vsearch)**  | **1) [conda](https://conda.io/en/latest/)** 
 
 ### <a name="hardware"></a> Software Dependencies
 
