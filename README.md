@@ -37,6 +37,7 @@ ConkatSeq uses three python scripts (build_clustering_table.py, filter_clusterin
 
 ### <a name="hardware"></a> Dependencies
 
+ConkatSeq currently supports any machine with Linux operating system and will require users to use a conda environment for installing the necessary software dependencies for ConkatSeq to run. 
 
 |**Hardware**|**Software**|**Package Manager**|
 |---|---|---|
