@@ -67,7 +67,7 @@ Linux (https://www.anaconda.com/distribution/#linux):
 terminal$ wget  https://repo.anaconda.com/archive/Anaconda2-2019.03-Linux-x86_64.sh
 terminal$ bash  Anaconda2-2019.03-Linux-x86_64.sh
 ```
-**NOTE:** Make sure you are in the path where the Anaconda3-2019.03-MacOSX-x86_64.sh file is located and with actual name of the file.
+**NOTE:** Make sure you are in the path where the Anaconda3-2019.03-******-x86_64.sh file is located and with actual name of the file.
  
 
 ## <a name="input"></a> Usage
