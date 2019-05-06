@@ -48,9 +48,11 @@ ConkatSeq currently supports any machine with Linux operating system and will re
 
 All installations will take place on the command line via the terminal.
 
-Install git: 
+**1) Install git:** 
 
-**1) Download and Install Conda:** 
+https://git-scm.com/downloads
+
+**2) Download and Install Conda:** 
 
 **Download** and **install** the conda installer for Python 2.7 from the Anaconda distribution manager:
 
@@ -69,7 +71,7 @@ terminal$ bash  Anaconda2-2019.03-Linux-x86_64.sh
 ```
 **NOTE:** Make sure you are in the path where the Anaconda2-2019.03-******-x86_64.sh file is located and with actual name of the file.
 
-**2) ConkatSeq conda environment:** 
+**3) ConkatSeq conda environment:** 
 
 Create a conda environment with Python 2.7 dedicated for Conkatseq to run:
 
@@ -77,15 +79,15 @@ Create a conda environment with Python 2.7 dedicated for Conkatseq to run:
 terminal$ conda create --name conkatseq python=2.7
 ```
 
-Install the required software dependencies f
-```
+Install the required software dependencies 
 
+```
 terminal$ conda install -c anaconda pandas networkx statsmodels scipy
-```
-terminal$ bash  Anaconda2-2019.03-MacOSX-x86_64.sh
+terminal$ conda install -c conda-forge biopython matplotlib  
+terminal$ conda install -c bioconda vsearch
 ```
 
-**3) Download and Install Conda:** 
+**4) Download and Install Conda:** 
 
 
 ## <a name="input"></a> Usage
