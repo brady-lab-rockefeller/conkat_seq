@@ -41,11 +41,26 @@ ConkatSeq currently supports any machine with Linux operating system and will re
 
 |**Hardware**|**Software**|**Package Manager**|
 |---|---|---|
-|**1) [Linux](https://www.linux.org/pages/download/)** <br/><br/> **(Any Mac or Unix OS machine)**|**1) [python 2.7](https://www.python.org/download/releases/2.7/)**  <br/><br/>  **2) [biopython](https://biopython.org/)** <br/><br/>  **3) [pandas](https://pandas.pydata.org)** <br/><br/> **4) [scipy](https://www.scipy.org/)** <br/><br/>  **5) [matplotlib](https://matplotlib.org/)** <br/><br/> **6) [statsmodel](https://www.statsmodels.org/stable/index.html)** <br/><br/> **7) [networkx](https://networkx.github.io/)** <br/><br/> **8) [vsearch](https://github.com/torognes/vsearch)**  | **1) [conda](https://conda.io/en/latest/)** 
+|**1) [Unix](https://www.linux.org/pages/download/)** <br/><br/> **(Any Mac or Linux OS machine)**|**1) [python 2.7](https://www.python.org/download/releases/2.7/)**  <br/><br/>  **2) [biopython](https://biopython.org/)** <br/><br/>  **3) [pandas](https://pandas.pydata.org)** <br/><br/> **4) [scipy](https://www.scipy.org/)** <br/><br/>  **5) [matplotlib](https://matplotlib.org/)** <br/><br/> **6) [statsmodel](https://www.statsmodels.org/stable/index.html)** <br/><br/> **7) [networkx](https://networkx.github.io/)** <br/><br/> **8) [vsearch](https://github.com/torognes/vsearch)**  | **1) [conda](https://conda.io/en/latest/)** 
 
 ### <a name="install"></a> Install
 
+All installations will take place on the command line via the terminal.
 
+1) Conda: 
+
+Install conda for Python 2.7 from the Anaconda distribution manager:
+
+Mac: 
+
+`https://www.anaconda.com/distribution/#macos
+
+
+
+
+  1) Install the conda package manager from the Anaconda :
+  https://repo.anaconda.com/archive/Anaconda2-2019.03-Linux-x86_64.sh
+  
 
 
 ## <a name="input"></a> Usage
