@@ -53,7 +53,7 @@ Install conda for Python 2.7 from the Anaconda distribution manager:
 
 Mac: 
 
-`https://www.anaconda.com/distribution/#macos
+`bash https://www.anaconda.com/distribution/#macos`
 
 
 
