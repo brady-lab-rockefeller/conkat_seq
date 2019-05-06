@@ -50,9 +50,9 @@ All installations will take place on the command line via the terminal.
 
 Install git: 
 
-**1) Conda:** 
+**1) Download and Install Conda:** 
 
-**Download**  and **install** the conda installer for Python 2.7 from the Anaconda distribution manager:
+**Download** and **install** the conda installer for Python 2.7 from the Anaconda distribution manager:
 
 Mac (https://www.anaconda.com/distribution/#macos): 
 
@@ -67,8 +67,28 @@ Linux (https://www.anaconda.com/distribution/#linux):
 terminal$ wget  https://repo.anaconda.com/archive/Anaconda2-2019.03-Linux-x86_64.sh
 terminal$ bash  Anaconda2-2019.03-Linux-x86_64.sh
 ```
-**NOTE:** Make sure you are in the path where the Anaconda3-2019.03-******-x86_64.sh file is located and with actual name of the file.
- 
+**NOTE:** Make sure you are in the path where the Anaconda2-2019.03-******-x86_64.sh file is located and with actual name of the file.
+
+**2) ConkatSeq conda environment:** 
+
+Create a conda environment with Python 2.7 dedicated for Conkatseq to run:
+
+```
+terminal$ conda create --name conkatseq python=2.7
+```
+
+Install the required software dependencies f
+```
+
+terminal$ conda install -c anaconda pandas networkx statsmodels scipy
+```
+terminal$ bash  Anaconda2-2019.03-MacOSX-x86_64.sh
+```
+
+
+
+**3) Download and Install Conda:** 
+
 
 ## <a name="input"></a> Usage
 
