@@ -85,8 +85,6 @@ terminal$ conda install -c anaconda pandas networkx statsmodels scipy
 terminal$ bash  Anaconda2-2019.03-MacOSX-x86_64.sh
 ```
 
-
-
 **3) Download and Install Conda:** 
 
 
