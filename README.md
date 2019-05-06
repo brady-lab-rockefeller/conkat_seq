@@ -10,6 +10,7 @@ Table of Contents
 - [Installation](#installation)
   - [Dependencies](#hardware)
   - [Install](#install)
+      
   
 - [Usage](#usage)
   1. [Generate clustering table](#table)
@@ -47,20 +48,27 @@ ConkatSeq currently supports any machine with Linux operating system and will re
 
 All installations will take place on the command line via the terminal.
 
-1) Conda: 
+Install git: 
 
-Download the conda installer for Python 2.7 from the Anaconda distribution manager:
+**1) Conda:** 
+
+**Download**  and **install** the conda installer for Python 2.7 from the Anaconda distribution manager:
 
 Mac (https://www.anaconda.com/distribution/#macos): 
 
 ```
 terminal$ wget  https://repo.anaconda.com/archive/Anaconda2-2019.03-MacOSX-x86_64.sh
-terminal$ wget  https://repo.anaconda.com/archive/Anaconda2-2019.03-MacOSX-x86_64.sh
+terminal$ bash  Anaconda2-2019.03-MacOSX-x86_64.sh
 ```
 
-2) 
-  
+Linux (https://www.anaconda.com/distribution/#linux): 
 
+```
+terminal$ wget  https://repo.anaconda.com/archive/Anaconda2-2019.03-Linux-x86_64.sh
+terminal$ bash  Anaconda2-2019.03-Linux-x86_64.sh
+```
+**NOTE:** Make sure you are in the path where the Anaconda3-2019.03-MacOSX-x86_64.sh file is located and with actual name of the file.
+ 
 
 ## <a name="input"></a> Usage
 
