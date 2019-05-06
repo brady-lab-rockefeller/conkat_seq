@@ -49,13 +49,15 @@ All installations will take place on the command line via the terminal.
 
 1) Conda: 
 
-Install conda for Python 2.7 from the Anaconda distribution manager:
+Download the conda installer for Python 2.7 from the Anaconda distribution manager:
 
-Mac: 
+Mac (https://www.anaconda.com/distribution/#macos):  
 
-`bash https://www.anaconda.com/distribution/#macos`
+`terminal$ wget  https://repo.anaconda.com/archive/Anaconda2-2019.03-MacOSX-x86_64.sh`
 
+`terminal$ wget  https://repo.anaconda.com/archive/Anaconda2-2019.03-MacOSX-x86_64.sh`
 
+https://repo.anaconda.com/archive/Anaconda2-2019.03-Linux-x86_64.sh
 
 
   1) Install the conda package manager from the Anaconda :
