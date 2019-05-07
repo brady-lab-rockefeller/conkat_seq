@@ -49,13 +49,13 @@ ConkatSeq currently supports any machine with Linux operating system and will re
 
 All installations will take place on the command line via the terminal.
 
-**1) Install git:** 
+**1) Git:** 
 
 All related scripts required to run ConkatSeq can be found in this github repository which can be obtained via git. 
 
 The following links provides instructions to install git on a Mac or Linux OS: https://git-scm.com/downloads
 
-**2) Download and Install Conda:** 
+**2) Conda:** 
 
 **Download** and **install** the conda installer for Python 2.7 from the Anaconda distribution manager:
 
@@ -81,19 +81,33 @@ Create a conda environment with Python 2.7 dedicated for Conkatseq to run:
 ```
 terminal$ conda create --name conkatseq python=2.7
 ```
-
-Install the required software dependencies 
+Actiavte the ConkatSeq conda environment:
 
 ```
-terminal$ conda install -c anaconda pandas networkx statsmodels scipy
-terminal$ conda install -c conda-forge biopython matplotlib  
-terminal$ conda install -c bioconda vsearch
+terminal$ conda activate conkatseq
+terminal(conkatseq)$
 ```
 
-**4) Download and Install Conda:** 
+Install the required software dependencies inside the ConkatSeq conda environment: 
 
+```
+terminal(conkatseq)$ conda install -c anaconda pandas networkx statsmodels scipy
+terminal(conkatseq)$ conda install -c conda-forge biopython matplotlib  
+terminal(conkatseq)$ conda install -c bioconda vsearch
+```
+
+**4) Install ConkatSeq:** 
+
+Use the git command to obtain this ConkatSeq 
+
+```
+terminal(conkatseq)$ conda install -c anaconda pandas networkx statsmodels scipy
+terminal(conkatseq)$ conda install -c conda-forge biopython matplotlib  
+```
 
 ## <a name="input"></a> Usage
+
+
 
 ## <a name="input"></a> Example
 
