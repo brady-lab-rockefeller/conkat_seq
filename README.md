@@ -10,9 +10,10 @@ Table of Contents
 - [Installation](#installation)
   - [Dependencies](#hardware)
   - [Install](#install)
-      
-      
-  
+      [1) Git:](#git)
+      [2) Conda:](#conda)
+      [3) ConkatSeq:](#conkatseq)
+      [4) Install ConkatSeq:](#installconkatseq)     
 - [Usage](#usage)
   1. [Generate clustering table](#table)
   2. [Polish clustering table](#polish)
@@ -49,7 +50,7 @@ ConkatSeq currently supports any machine with Linux operating system and will re
 
 All installations will take place on the command line via the terminal.
 
-**1) Git:** 
+### <a name="git"></a> **1) Git:** 
 
 All related scripts required to run ConkatSeq can be found in this github repository which can be obtained via git. 
 
