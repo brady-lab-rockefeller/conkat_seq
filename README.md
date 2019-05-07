@@ -114,7 +114,7 @@ conkat_seq.py              conkat_utils.pyc  helpers.py                  __init_
 ```
 ## <a name="usage"></a> Usage
 
-ConkatSeq consist of three main components divided in three scripts which is how the tool runs. The following will describe how each script is being used with its data and options.
+ConkatSeq consist of three main components divided in three scripts which is how the tool runs. The following section will describe how each script is being used with its data and options.
 
 **NOTE:** To run ConkatSeq you must activate its conda environment created in the [ConkatSeq conda environment](#conkatseq2) section earlier and be inside the conkat_seq folder which was [downloaded from this repository](#download2): 
 
@@ -125,7 +125,6 @@ ConkatSeq consist of three main components divided in three scripts which is how
 The build_clustering_table.py is the first step and component in the ConkatSeq tool. 
 
 The following command shows how to run the build_clustering.py script with its required options:
-
 ```
 (conkatseq)[terminal conkat_seq]$ python build_clustering_table.py  -i INPATH -o OUTPATH -s SAMPLE_NAME -l STRIP_LEFT -t TRUNCATE -c CLUSTER_ID
 ```
@@ -136,7 +135,7 @@ The following command shows how to run the build_clustering.py script with its r
 |**-o OUTPUT**|**ENTIRE** folder path of where the output files should be located must be provided|  
 |**-s SAMPLE_NAME**|name to provide for the outputs|  
 |**-l STRIP_LEFT**|numerical value that represent the number if bases to remove at the left side of the read (usually primer length) |  
-|**-t TRUNCATE**|numerical value that represent the number of bases to keep for each read|  
+|**-t TRUNCATE**|numerical value that represents the number of bases (ex: 100) to keep for each read|  
 |**-c CLUSTER_ID**|numerical value in decimal point (ex: 0.95) that represents sequence holomolgy identity threshold for clustering|  
 
 
