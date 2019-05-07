@@ -8,9 +8,9 @@ Table of Contents
 
 - [Data Input/Output](#inputandoutput)
 - [Installation](#installation)
-  - [Dependencies](#hardware)
-  - [Install](#install)
-      -[1) Git:](#git)
+  - [Dependencies](##hardware)
+  - [Install](##install)
+      -[1) Git:](###git)
       -[2) Conda:](#conda)
       -[3) ConkatSeq:](#conkatseq)
       -[4) Install ConkatSeq:](#installconkatseq)     
