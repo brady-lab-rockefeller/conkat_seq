@@ -25,7 +25,7 @@ Table of Contents
 ## <a name="inputandoutput"></a> Data Input/Output
 
 
-ConkatSeq uses three python scripts (build_clustering_table.py, filter_clustering_table.py, conkat_seq.py) to process demultiplexed amplicon sequencing data (FASTA format) and produce a network graph of highly associated coccurence sequence clusters (GraphML format).  
+ConkatSeq uses three python scripts **(build_clustering_table.py, filter_clustering_table.py, conkat_seq.py)** to process **demultiplexed amplicon sequencing data (FASTA format)** and produce a **network graph of highly associated coccurence sequence clusters (GraphML format)**.  
 
 
 |**Script**|**Input**|**Description**|**Output**|**Description**|
@@ -75,7 +75,7 @@ terminal$ bash  Anaconda2-2019.03-Linux-x86_64.sh
 ```
 **NOTE:** Make sure you are in the path where the Anaconda2-2019.03-******-x86_64.sh file is located and with actual name of the file.
 
-#### <a name="installconda"></a>     **d) ConkatSeq conda environment:** 
+#### <a name="installconda"></a>     **c) ConkatSeq conda environment:** 
 
 Create a conda environment with Python 2.7 dedicated for Conkatseq to run:
 
@@ -97,14 +97,16 @@ terminal(conkatseq)$ conda install -c conda-forge biopython matplotlib
 terminal(conkatseq)$ conda install -c bioconda vsearch
 ```
 
-**4) Install ConkatSeq:** 
+**d) Install ConkatSeq:** 
 
 Use the git command to obtain this ConkatSeq repository which will contain all the necessary material required to run:
 
 ```
-terminal(conkatseq)$ conda install -c anaconda pandas networkx statsmodels scipy
-terminal(conkatseq)$ conda install -c conda-forge biopython matplotlib  
+terminal(conkatseq)$ git clone https://github.com/brady-lab-rockefeller/conkat_seq
+terminal(conkatseq)$ ls conkat_seq
+
 ```
+
 
 ## <a name="input"></a> Usage
 
