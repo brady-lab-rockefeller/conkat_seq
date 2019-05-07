@@ -16,8 +16,8 @@ Table of Contents
         *  [Install ConkatSeq:](#installconkatseq)     
 - [Usage](#usage)
   1. [Generate clustering table](#table) (build_clustering_table.py)
-  2. [Filter clustering table] (filter_clustering_table.py)(#polish)
-  3. [Compute and Graph clustering table] (conkat_seq.py)(#graph)
+  2. [Filter clustering table](#polish) (filter_clustering_table.py)
+  3. [Compute and Graph clustering table](#graph) (conkat_seq.py)
 
 - [Example](#example)
   
@@ -36,7 +36,7 @@ ConkatSeq uses three python scripts **(build_clustering_table.py, filter_cluster
 
 
 
-## <a name="input"></a> Installation
+## <a name="installation"></a> Installation
 
 ### <a name="hardware"></a> i. Dependencies
 
