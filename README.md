@@ -30,7 +30,7 @@ ConkatSeq uses three python scripts **(build_clustering_table.py, filter_cluster
 
 |**Script**|**Input**|**Description**|**Output**|**Description**|
 |---|---|---|---|---|
-|**build_clustering_table.py**|**1) FASTA sequences (Illumina amplicon sequencing data file(s))**| 1) The amplicon sequencing data file(s) must be demultiplexed or split into its corresponding barcoded numbers of well plate. <br/><br/> *Ex: If the sequencing was performed on a 384 well plate, the demultiplexed data will consist of 384 individual FASTA files representing each barcoded sample well in the plate.*|**1) (sample_name)_OTU.txt**  <br/><br/> **2) (sample_name)_OTU.fna** | **1)Domain clustering table** <br/><br/>  **2) Domain centroid sequences** 
+|**build_clustering_table.py**|**1) FASTA sequences (Illumina amplicon sequencing data file(s))**| 1) The amplicon sequencing data file(s) must be demultiplexed or split into its corresponding barcoded numbers of well plate. <br/><br/> *Ex: If the sequencing was performed on a 384 well plate, the demultiplexed data will consist of 384 individual FASTA files representing each barcoded sample well in the plate.*|**1) (sample_name)_OTU.txt**  <br/><br/> **2) (sample_name)_OTU.fna** | 1)Domain clustering table <br/><br/>  2) Domain centroid sequences
 |**filter_clustering_table.py**| 
 |**conkat_seq.py**|
 
@@ -122,9 +122,9 @@ ConkatSeq consist of three main components divided in three scripts which is how
 
 
 
-### <a name="polish"></a> **i) Filter clustering table* 
+### <a name="polish"></a> **ii) Filter clustering table** 
 
-### <a name="graph"></a> **i) Compute and Graph clustering table** 
+### <a name="graph"></a> **iii) Compute and Graph clustering table** 
 
 
 
