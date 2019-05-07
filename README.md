@@ -223,6 +223,7 @@ optional arguments:
   --verbose             increase output verbosity
   ```
 
+#### c) filter_clustering_table.py:
 ## <a name="example"></a> Example
 
 
