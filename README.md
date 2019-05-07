@@ -15,7 +15,7 @@ Table of Contents
         *  [ConkatSeq conda environment:](#conkatseq)
         *  [Install ConkatSeq:](#installconkatseq)     
 - [Usage](#usage)
-  1. [Generate clustering table] (#table) (build_clustering_table.py)(#table)
+  1. [Generate clustering table](#table) (build_clustering_table.py)
   2. [Filter clustering table] (filter_clustering_table.py)(#polish)
   3. [Compute and Graph clustering table] (conkat_seq.py)(#graph)
 
@@ -75,7 +75,7 @@ terminal$ bash  Anaconda2-2019.03-Linux-x86_64.sh
 ```
 **NOTE:** Make sure you are in the path where the Anaconda2-2019.03-******-x86_64.sh file is located and with actual name of the file.
 
-#### <a name="installconda"></a>     **c) ConkatSeq conda environment:** 
+#### <a name="conkatseq"></a>     **c) ConkatSeq conda environment:** 
 
 Create a conda environment with Python 2.7 dedicated for Conkatseq to run:
 
@@ -99,7 +99,7 @@ terminal(conkatseq)$ conda install -c conda-forge biopython matplotlib
 terminal(conkatseq)$ conda install -c bioconda vsearch
 ```
 
-**d) Install ConkatSeq:** 
+#### <a name="installconkatseq"></a> **d) Install ConkatSeq:** 
 
 Use the git command to obtain this ConkatSeq repository which will contain all the necessary material required to run:
 
