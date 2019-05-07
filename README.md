@@ -129,14 +129,54 @@ The following command shows how to run the build_clustering.py script with its r
 
 |**Required Script options**|**Function**|
 |---|---|
-|**-i INPATH**|**-o OUTPATH**   
+|**-i INPATH**|**ENTIRE** folder path to the input file(s) must be provided|
+|**-i OUTPUT**||  
+|**-i SAMPLE_NAME**||  
+|**-i STRIP_LEFT**||  
+|**-i TRUNCATE**||  
+|**-i CLUSTER_ID**||  
+
+
+For more information about the options type the following that will provide descriptions for every existing parameter.:
+```
+
+(conkatseq)[terminal conkat_seq]$ python build_clustering_table.py -h
+usage: build_clustering_table.py [-h] -i INPATH -o OUTPATH -s SAMPLE_NAME -l
+                                 STRIP_LEFT -t TRUNCATE -c CLUSTER_ID
+                                 [--host_path HOST_PATH] [--threads THREADS]
+                                 [--verbose] [--remove_files]
+
+build_clustering_table script
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INPATH, --inpath INPATH
+                        subpool demultiplexed read files directory
+  -o OUTPATH, --outpath OUTPATH
+                        output directory for processed files
+  -s SAMPLE_NAME, --sample_name SAMPLE_NAME
+                        sample name for output files
+  -l STRIP_LEFT, --strip_left STRIP_LEFT
+                        number of bases to strip (typically primer length)
+  -t TRUNCATE, --truncate TRUNCATE
+                        number of bases to keep
+  -c CLUSTER_ID, --cluster_id CLUSTER_ID
+                        identity threshold for amplicon clustering, default =
+                        0.95
+  --host_path HOST_PATH
+                        path to host refrence fasta file if read filtering is
+                        required, default = False
+  --threads THREADS     number of threads to use by vsearch, default = 1
+  --verbose             increase output verbosity
+  --remove_files        do not keep processed read files
+
+
+
 
 ### <a name="polish"></a> **ii) Filter clustering table** 
 
 ### <a name="graph"></a> **iii) Compute and Graph clustering table** 
-
-
-
+```
 
 
 ## <a name="example"></a> Example
