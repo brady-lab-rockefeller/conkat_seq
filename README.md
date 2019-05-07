@@ -120,7 +120,7 @@ ConkatSeq consist of three main components divided in three scripts which is how
 
 ### <a name="table"></a>  <a name="build2"></a>  **i) Generate clustering table** 
 
-#### a) build_clustering_table.py:
+#### build_clustering_table.py:
 
 The build_clustering_table.py is the first step and component in the ConkatSeq tool. 
 
@@ -171,14 +171,9 @@ optional arguments:
   --threads THREADS     number of threads to use by vsearch, default = 1
   --verbose             increase output verbosity
   --remove_files        do not keep processed read files
-
-
-
-
-### <a name="polish"></a> **ii) Filter clustering table** 
-
-### <a name="graph"></a> **iii) Compute and Graph clustering table** 
 ```
+### <a name="table"></a>  <a name="polish"></a>  **i) Filter clustering table** 
+
 #### b) filter_clustering_table.py:
 
 The following command shows how to run the filter_clustering_table.py script which uses the outputs produced from the first component from the [build_clustering_table.py](#build2)  with its required options:
