@@ -171,7 +171,7 @@ optional arguments:
   --verbose             increase output verbosity
   --remove_files        do not keep processed read files
 ```
-### <a name="table"></a>  <a name="conkatseq2"></a>  **ii) Filter clustering table** 
+### <a name="table"></a>  <a name="conkatseq3"></a>  **ii) Filter clustering table** 
 
 #### filter_clustering_table.py:
 
@@ -223,9 +223,9 @@ optional arguments:
 
 ### <a name="graph"></a> **iii) Compute and Graph clustering table** 
 
-#### c)conkat_seq.py:
+#### conkat_seq.py:
 
-The conkat_seq.py script is the third step and component in the ConkatSeq tool and uses the outputs produced from the second component from the [filter_clustering_table.py](#conkatseq2). 
+The conkat_seq.py script is the third step and component in the ConkatSeq tool and uses the outputs produced from the second component from the [filter_clustering_table.py](#conkatseq3). 
 
 The following command shows how to run the filter_clustering_table.py script with its required options:
 
