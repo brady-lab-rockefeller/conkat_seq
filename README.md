@@ -134,12 +134,12 @@ The following command shows how to run the build_clustering.py script with its r
 |**-i INPATH**|**ENTIRE** folder path of the input file(s) must be provided|
 |**-o OUTPUT**|**ENTIRE** folder path of where the output files should be located must be provided|  
 |**-s SAMPLE_NAME**|name to provide for the outputs|  
-|**-l STRIP_LEFT**|numerical value that represent the number if bases to remove at the left side of the read (usually primer length) |  
+|**-l STRIP_LEFT**|numerical value that represent the number if bases (ex: 10) to remove at the left side of the read (usually primer length) |  
 |**-t TRUNCATE**|numerical value that represents the number of bases (ex: 100) to keep for each read|  
 |**-c CLUSTER_ID**|numerical value in decimal point (ex: 0.95) that represents sequence holomolgy identity threshold for clustering|  
 
 
-For more information about the options type the following that will provide descriptions for every existing parameter.:
+For more information about the options, type the following that will provide descriptions for every existing parameter:
 ```
 (conkatseq)[terminal conkat_seq]$ python build_clustering_table.py -h
 usage: build_clustering_table.py [-h] -i INPATH -o OUTPATH -s SAMPLE_NAME -l
@@ -171,7 +171,7 @@ optional arguments:
   --verbose             increase output verbosity
   --remove_files        do not keep processed read files
 ```
-### <a name="table"></a>  <a name="polish"></a>  **i) Filter clustering table** 
+### <a name="table"></a>  <a name="polish"></a>  **ii) Filter clustering table** 
 
 #### filter_clustering_table.py:
 
@@ -184,9 +184,11 @@ python filter_clustering_table.py  -i INPATH -s SAMPLE_NAME -mrs MIN_READ_SIZE -
 |---|---|
 |**-i INPATH**|**ENTIRE** folder path of the input file(s) must be provided|
 |**-s SAMPLE_NAME**|name to provide for the outputs|  
-|**-mrs MIN_READ_SIZE**|numerical value that represents the number of amplicon reads (ex: 3) to comsider |  
+|**-mrs MIN_READ_SIZE**|numerical value that represents the number of amplicon reads (ex: 3) to consider|  
 |**-rst  RELATIVE_SIZE_THRESHOLD**|numerical value that represents the pvalue threshold (ex: 0.05) used to remove insignificant reads|  
-|**-msp MIN_SUBPOOLS**|numerical value in decimal point (ex: 3) that represents sequence holomolgy identity threshold for clustering|  
+|**-msp MIN_SUBPOOLS**|numerical value that represents the number of seperate subpools (ex: 3) amplicons were detected|  
+
+For more information about the options, type the following that will provide descriptions for every existing parameter:
 
 ```
 
@@ -217,9 +219,44 @@ optional arguments:
   --verbose             increase output verbosity
   ```
 
+### <a name="graph"></a> **iii) Compute and Graph clustering table** 
+
 #### c)conkat_seq.py:
 
+For more information about the options, type the following that will provide descriptions for every existing parameter:
 
+```
+
+(conkatseq)[terminal conkat_seq]$python conkat_seq.py -h
+usage: conkat_seq.py [-h] -l LIST_OF_CLUSTERING_DATAFRAMES
+                     [LIST_OF_CLUSTERING_DATAFRAMES ...] -o OUTPATH
+                     [-m MIN_SHARED_OCCURANCES] [-a ALPHA]
+                     [--merge_similar_id MERGE_SIMILAR_ID] [--threads THREADS]
+                     --flag_edges [--verbose] [--override]
+
+build_clustering_table script
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -l LIST_OF_CLUSTERING_DATAFRAMES [LIST_OF_CLUSTERING_DATAFRAMES ...], --list_of_clustering_dataframes LIST_OF_CLUSTERING_DATAFRAMES [LIST_OF_CLUSTERING_DATAFRAMES ...]
+                        one or more domain clustering dataframes for analysis
+  -o OUTPATH, --outpath OUTPATH
+                        results output directory
+  -m MIN_SHARED_OCCURANCES, --min_shared_occurances MIN_SHARED_OCCURANCES
+                        only analyze domain pairs with co-occurances >
+                        min_shared_occurances, default = 3
+  -a ALPHA, --alpha ALPHA
+                        maximal adjusted p-value threshold, default = 10**-6
+  --merge_similar_id MERGE_SIMILAR_ID
+                        identify threshold for merging similar domains within
+                        networks, default = 0.9
+  --threads THREADS     number of threads to use by vsearch, default = 1
+  --flag_edges          run monte carlo analysis to flag edges potenially
+                        affected by index swapping, default = False
+  --verbose             increase output verbosity
+  --override            re-write existing files
+  
+ ```
 
 ## <a name="example"></a> Example
 
