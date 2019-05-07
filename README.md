@@ -129,7 +129,7 @@ The following command shows how to run the build_clustering.py script with its r
 (conkatseq)[terminal conkat_seq]$ python build_clustering_table.py  -i INPATH -o OUTPATH -s SAMPLE_NAME -l STRIP_LEFT -t TRUNCATE -c CLUSTER_ID
 ```
 
-|**Required Script options**|**Option use**|
+|**Required Script options**|**Options use**|
 |---|---|
 |**-i INPATH**|**ENTIRE** folder path of the input file(s) must be provided|
 |**-o OUTPUT**|**ENTIRE** folder path of where the output files should be located must be provided|  
@@ -182,7 +182,7 @@ The following command shows how to run the filter_clustering_table.py script wit
 ```
 python filter_clustering_table.py  -i INPATH -s SAMPLE_NAME -mrs MIN_READ_SIZE -rst RELATIVE_SIZE_THRESHOLD -msp MIN_SUBPOOLS 
 ```
-|**Required Script options**|**Option use**|
+|**Required Script options**|**Options use**|
 |---|---|
 |**-i INPATH**|**ENTIRE** folder path of the input file(s) must be provided|
 |**-s SAMPLE_NAME**|name to provide for the outputs|  
@@ -225,9 +225,22 @@ optional arguments:
 
 #### conkat_seq.py:
 
-The conkat_seq.py script is the third step and component in the ConkatSeq tool and uses the outputs produced from the second component from the [filter_clustering_table.py](#conkatseq3). 
+The conkat_seq.py script is the third and last step and component in the ConkatSeq tool and uses the outputs produced from the second component from the [filter_clustering_table.py](#conkatseq3). 
 
-The following command shows how to run the filter_clustering_table.py script with its required options:
+The following command shows how to run the conkat_seq.py script with its required options:
+```
+
+python conkat_seq.py -l LIST_OF_CLUSTERING_DATAFRAMES  -o OUTPATH -a ALPHA -m MIN_SHARED_OCCURANCES  --flag_edges 
+```
+
+|**Required Script options**|**Options use**|
+|---|---|
+|**-l LIST_OF_CLUSTERING_DATAFRAMES**|**ENTIRE** folder path of the input file(s) must be provided|
+|**-o OUTPUT**|**ENTIRE** folder path of where the output files should be located must be provided|  
+|**-a ALPHA**|numerical value that represents the pvalue threshold (ex: 0.05) used to remove insignificant cooccurences| 
+|**-m MIN_SHARED_OCCURANCES**|numerical value that represent the number of domain (ex: 3) occurance|  
+|**-flag_edges TRUNCATE**|perform monte carlo analysis (simulates models of possible domain occurances|  
+  
 
 For more information about the options, type the following that will provide descriptions for every existing parameter:
 
