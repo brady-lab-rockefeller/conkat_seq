@@ -40,7 +40,7 @@ ConkatSeq uses three python scripts **(build_clustering_table.py, filter_cluster
 
 ### <a name="hardware"></a> i. Dependencies
 
-ConkatSeq currently supports any machine with Linux operating system and will require users to use a conda environment for installing the necessary software dependencies for ConkatSeq to run. 
+ConkatSeq currently supports any machine with Linux operating system that has Python 2.7 and will require users to use a conda environment for installing the necessary software dependencies for ConkatSeq to run. 
 
 |**Hardware**|**Software**|**Package Manager**|
 |---|---|---|
@@ -54,20 +54,20 @@ All installations will take place on the command line via the terminal.
 
 All related scripts required to run ConkatSeq can be found in this github repository which can be obtained via git. 
 
-The following links provides instructions to install git on a Mac or Linux OS: https://git-scm.com/downloads
+The following link provides instructions to install git on a Mac or Linux OS: https://git-scm.com/downloads
 
 #### <a name="conda"></a>     **b) Conda:** 
 
 **Download** and **install** the conda installer for Python 2.7 from the Anaconda distribution manager:
 
-Mac (https://www.anaconda.com/distribution/#macos): 
+[Mac](https://www.anaconda.com/distribution/#macos): 
 
 ```
 terminal$ wget  https://repo.anaconda.com/archive/Anaconda2-2019.03-MacOSX-x86_64.sh
 terminal$ bash  Anaconda2-2019.03-MacOSX-x86_64.sh
 ```
 
-Linux (https://www.anaconda.com/distribution/#linux): 
+[Linux](https://www.anaconda.com/distribution/#linux): 
 
 ```
 terminal$ wget  https://repo.anaconda.com/archive/Anaconda2-2019.03-Linux-x86_64.sh
@@ -88,6 +88,8 @@ Actiavte the ConkatSeq conda environment:
 terminal$ conda activate conkatseq
 terminal(conkatseq)$
 ```
+
+**NOTE:** To deactivate the ConkatSeq conda environment, type the following ```conda activate conkatseq```
 
 Install the required software dependencies inside the ConkatSeq conda environment: 
 
