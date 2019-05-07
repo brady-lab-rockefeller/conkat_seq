@@ -127,7 +127,9 @@ The following command shows how to run the build_clustering.py script with its r
 (conkatseq)[terminal conkat_seq]$ python build_clustering_table.py  -i INPATH -o OUTPATH -s SAMPLE_NAME -l STRIP_LEFT -t TRUNCATE -c CLUSTER_ID
 ```
 
-
+|**Required Script options**|**Function**|
+|---|---|
+|**-i INPATH**|**-o OUTPATH**   
 
 ### <a name="polish"></a> **ii) Filter clustering table** 
 
