@@ -8,12 +8,12 @@ Table of Contents
 
 - [Data Input/Output](#inputandoutput)
 - [Installation](#installation)
-  - [Dependencies](##hardware)
-  - [Install](#install)
+  1. [Dependencies](##hardware)
+  2. [Install](#install)
     1)  [ Git:](#git)
     2)  [Conda:](#conda)
-      -[3) ConkatSeq:](#conkatseq)
-      -[4) Install ConkatSeq:](#installconkatseq)     
+    3)  [ConkatSeq:](#conkatseq)
+    4)  [Install ConkatSeq:](#installconkatseq)     
 - [Usage](#usage)
   1. [Generate clustering table](#table)
   2. [Polish clustering table](#polish)
@@ -50,13 +50,13 @@ ConkatSeq currently supports any machine with Linux operating system and will re
 
 All installations will take place on the command line via the terminal.
 
-### <a name="git"></a> **1) Git:** 
+### <a name="git"></a>**a) Git:** 
 
 All related scripts required to run ConkatSeq can be found in this github repository which can be obtained via git. 
 
 The following links provides instructions to install git on a Mac or Linux OS: https://git-scm.com/downloads
 
-**2) Conda:** 
+### <a name="conda"></a>**b) Conda:** 
 
 **Download** and **install** the conda installer for Python 2.7 from the Anaconda distribution manager:
 
