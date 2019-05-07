@@ -122,7 +122,7 @@ ConkatSeq consist of three main components divided in three scripts which is how
 
 #### build_clustering_table.py:
 
-The build_clustering_table.py is the first step and component in the ConkatSeq tool. 
+The build_clustering_table.py script is the first step and component in the ConkatSeq tool. 
 
 The following command shows how to run the build_clustering.py script with its required options:
 ```
@@ -171,11 +171,13 @@ optional arguments:
   --verbose             increase output verbosity
   --remove_files        do not keep processed read files
 ```
-### <a name="table"></a>  <a name="polish"></a>  **ii) Filter clustering table** 
+### <a name="table"></a>  <a name="conkatseq2"></a>  **ii) Filter clustering table** 
 
 #### filter_clustering_table.py:
 
-The following command shows how to run the filter_clustering_table.py script which uses the outputs produced from the first component from the [build_clustering_table.py](#build2)  with its required options:
+The filter_clustering_table.py script is the second step and component in the ConkatSeq tool and uses the outputs produced from the first component from the [build_clustering_table.py](#build2). 
+
+The following command shows how to run the filter_clustering_table.py script with its required options:
 
 ```
 python filter_clustering_table.py  -i INPATH -s SAMPLE_NAME -mrs MIN_READ_SIZE -rst RELATIVE_SIZE_THRESHOLD -msp MIN_SUBPOOLS 
@@ -222,6 +224,10 @@ optional arguments:
 ### <a name="graph"></a> **iii) Compute and Graph clustering table** 
 
 #### c)conkat_seq.py:
+
+The conkat_seq.py script is the third step and component in the ConkatSeq tool and uses the outputs produced from the second component from the [filter_clustering_table.py](#conkatseq2). 
+
+The following command shows how to run the filter_clustering_table.py script with its required options:
 
 For more information about the options, type the following that will provide descriptions for every existing parameter:
 
