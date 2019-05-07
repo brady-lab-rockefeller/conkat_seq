@@ -12,7 +12,7 @@ Table of Contents
   2. [Install](#install)
         *  [ Git:](#git)
         *  [Conda:](#conda)
-        *  [ConkatSeq:](#conkatseq)
+        *  [ConkatSeq conda environment:](#conkatseq)
         *  [Install ConkatSeq:](#installconkatseq)     
 - [Usage](#usage)
   1. [Generate clustering table](#table)
@@ -99,7 +99,7 @@ terminal(conkatseq)$ conda install -c bioconda vsearch
 
 **4) Install ConkatSeq:** 
 
-Use the git command to obtain this ConkatSeq 
+Use the git command to obtain this ConkatSeq repository which will contain all the necessary material required to run:
 
 ```
 terminal(conkatseq)$ conda install -c anaconda pandas networkx statsmodels scipy
