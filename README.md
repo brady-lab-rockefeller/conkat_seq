@@ -75,7 +75,7 @@ terminal$ bash  Anaconda2-2019.03-Linux-x86_64.sh
 ```
 **NOTE:** Make sure you are in the path where the Anaconda2-2019.03-******-x86_64.sh file is located and with actual name of the file.
 
-#### <a name="conkatseq"></a>     **c) ConkatSeq conda environment:** 
+#### <a name="conkatseq"></a>  <a name="conkatseq2"></a>    **c) ConkatSeq conda environment:** (#
 
 Create a conda environment with Python 2.7 dedicated for Conkatseq to run:
 
@@ -113,6 +113,8 @@ conkat_seq  README.md  resources
 ## <a name="input"></a> Usage
 
 ConkatSeq consist of three main components divided in three scripts which is how the tool is run. The following will describe how each script is being used with its data and options.
+
+**NOTE:** To run ConkatSeq you must activate the conkatseq conda environment created in the [ConkatSeq conda environment](#conkatseq2)
 
 ### <a name="table"></a> **i) Generate clustering table** 
 
