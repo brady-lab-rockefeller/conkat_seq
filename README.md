@@ -10,10 +10,10 @@ Table of Contents
 - [Installation](#installation)
   1. [Dependencies](##hardware)
   2. [Install](#install)
-        *  [ Git:](#git)
-        *  [Conda:](#conda)
-        *  [ConkatSeq conda environment:](#conkatseq)
-        *  [Install ConkatSeq:](#installconkatseq)     
+        *  [ Git](#git)
+        *  [Conda](#conda)
+        *  [ConkatSeq conda environment](#conkatseq)
+        *  [Install ConkatSeq](#installconkatseq)     
 - [Usage](#usage)
   1. [Generate clustering table](#table) (build_clustering_table.py)
   2. [Filter clustering table](#polish) (filter_clustering_table.py)
@@ -112,7 +112,7 @@ conkat_seq  README.md  resources
 
 ## <a name="input"></a> Usage
 
-
+#### <a name="table"></a> **i) Generate clustering table** 
 
 
 
