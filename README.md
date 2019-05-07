@@ -190,9 +190,9 @@ python filter_clustering_table.py  -i INPATH -s SAMPLE_NAME -mrs MIN_READ_SIZE -
 |---|---|
 |**-i INPATH**|**ENTIRE** folder path of the input file(s) must be provided|
 |**-s SAMPLE_NAME**|name to provide for the outputs|  
-|**-mrs MIN_READ_SIZE**|numerical value that represent the number if bases to remove at the left side of the read (usually primer length) |  
-|**-rst  RELATIVE_SIZE_THRESHOLD**|numerical value that represent the number of bases to keep for each read|  
-|**-msp MIN_SUBPOOLS**|numerical value in decimal point (ex: 0.95) that represents sequence holomolgy identity threshold for clustering|  
+|**-mrs MIN_READ_SIZE**|numerical value that represents the number of amplicon reads (ex: 3) to comsider |  
+|**-rst  RELATIVE_SIZE_THRESHOLD**|numerical value that represents the pvalue threshold (ex: 0.05) used to remove insignificant reads|  
+|**-msp MIN_SUBPOOLS**|numerical value in decimal point (ex: 3) that represents sequence holomolgy identity threshold for clustering|  
 
 ```
 
@@ -223,7 +223,10 @@ optional arguments:
   --verbose             increase output verbosity
   ```
 
-#### c) filter_clustering_table.py:
+#### c)conkat_seq.py:
+
+
+
 ## <a name="example"></a> Example
 
 
