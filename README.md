@@ -128,7 +128,7 @@ The following command shows how to run the build_clustering.py script with its r
 (conkatseq)[terminal conkat_seq]$ python build_clustering_table.py  -i INPATH -o OUTPATH -s SAMPLE_NAME -l STRIP_LEFT -t TRUNCATE -c CLUSTER_ID
 ```
 
-|**Required Script options**|**Operation**|
+|**Required Script options**|**Option use**|
 |---|---|
 |**-i INPATH**|**ENTIRE** folder path of the input file(s) must be provided|
 |**-o OUTPUT**|**ENTIRE** folder path of where the outpyt files should be located must be provided|  
