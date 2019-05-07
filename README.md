@@ -1,4 +1,4 @@
-ConkatSeq Manual
+ConkatSeq Manual -- still in progress
 ================
 
 #### ConkatSeq is a python program for concatenating amplicon sequencing data back to its chromosomal location in the genome. (Niv describe) 
@@ -133,8 +133,8 @@ The following command shows how to run the build_clustering.py script with its r
 |**-i INPATH**|**ENTIRE** folder path of the input file(s) must be provided|
 |**-o OUTPUT**|**ENTIRE** folder path of where the outpyt files should be located must be provided|  
 |**-s SAMPLE_NAME**|name to provide for the outputs|  
-|**-l STRIP_LEFT**|numerical value that |  
-|**-t TRUNCATE**|number of bases to keep for each read|  
+|**-l STRIP_LEFT**|numerical value that represent  |  
+|**-t TRUNCATE**|numerical value that represent the number of bases to keep for each read|  
 |**-c CLUSTER_ID**||  
 
 
