@@ -131,11 +131,11 @@ The following command shows how to run the build_clustering.py script with its r
 |**Required Script options**|**Option use**|
 |---|---|
 |**-i INPATH**|**ENTIRE** folder path of the input file(s) must be provided|
-|**-o OUTPUT**|**ENTIRE** folder path of where the outpyt files should be located must be provided|  
+|**-o OUTPUT**|**ENTIRE** folder path of where the output files should be located must be provided|  
 |**-s SAMPLE_NAME**|name to provide for the outputs|  
-|**-l STRIP_LEFT**|numerical value that represent  |  
+|**-l STRIP_LEFT**|numerical value that represent the number if bases to remove at the left side of the read (usually primer length) |  
 |**-t TRUNCATE**|numerical value that represent the number of bases to keep for each read|  
-|**-c CLUSTER_ID**||  
+|**-c CLUSTER_ID**|numerical value in decimal point (ex: 0.95) that represents sequence holomolgy identity threshold for clustering|  
 
 
 For more information about the options type the following that will provide descriptions for every existing parameter.:
@@ -177,7 +177,9 @@ optional arguments:
 
 ### <a name="graph"></a> **iii) Compute and Graph clustering table** 
 ```
+#### b) filter_clustering_table.py:
 
+The following command shows how to run the filter_clustering_table.py script which uses the outputs produced from the firsfrom the build_clustering_table.py  with its required options:
 
 ## <a name="example"></a> Example
 
