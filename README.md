@@ -10,7 +10,7 @@ Table of Contents
 - [Installation](#installation)
   - [Dependencies](##hardware)
   - [Install](#install)
-     1)[ Git:](#git)
+    1)  [ Git:](#git)
       -[2) Conda:](#conda)
       -[3) ConkatSeq:](#conkatseq)
       -[4) Install ConkatSeq:](#installconkatseq)     
