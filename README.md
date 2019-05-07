@@ -120,6 +120,13 @@ ConkatSeq consist of three main components divided in three scripts which is how
 
 ### <a name="table"></a> **i) Generate clustering table** 
 
+The following command shows how to run the build_clustering.py script with its required options:
+
+```
+
+(conkatseq)[terminal conkat_seq]$ python build_clustering_table.py  -i INPATH -o OUTPATH -s SAMPLE_NAME -l STRIP_LEFT -t TRUNCATE -c CLUSTER_ID
+```
+
 
 
 ### <a name="polish"></a> **ii) Filter clustering table** 
