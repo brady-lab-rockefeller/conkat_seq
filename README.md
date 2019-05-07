@@ -118,9 +118,11 @@ ConkatSeq consist of three main components divided in three scripts which is how
 
 **NOTE:** To run ConkatSeq you must activate its conda environment created in the [ConkatSeq conda environment](#conkatseq2) section earlier and be inside the conkat_seq folder which was [downloaded from this repository](#download2): 
 
-### <a name="table"></a> **i) Generate clustering table** 
+### <a name="table"></a>  <a name="build2"></a>  **i) Generate clustering table** 
 
 #### a) build_clustering_table.py:
+
+The build_clustering_table.py is the first step and component in the ConkatSeq tool. 
 
 The following command shows how to run the build_clustering.py script with its required options:
 
@@ -179,7 +181,7 @@ optional arguments:
 ```
 #### b) filter_clustering_table.py:
 
-The following command shows how to run the filter_clustering_table.py script which uses the outputs produced from the firsfrom the build_clustering_table.py  with its required options:
+The following command shows how to run the filter_clustering_table.py script which uses the outputs produced from the first component from the [build_clustering_table.py](#build2)  with its required options:
 
 ## <a name="example"></a> Example
 
