@@ -174,7 +174,7 @@ optional arguments:
 ```
 ### <a name="table"></a>  <a name="polish"></a>  **i) Filter clustering table** 
 
-#### b) filter_clustering_table.py:
+#### filter_clustering_table.py:
 
 The following command shows how to run the filter_clustering_table.py script which uses the outputs produced from the first component from the [build_clustering_table.py](#build2)  with its required options:
 
