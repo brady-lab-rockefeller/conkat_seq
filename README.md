@@ -15,7 +15,7 @@ Table of Contents
         *  [ConkatSeq conda environment:](#conkatseq)
         *  [Install ConkatSeq:](#installconkatseq)     
 - [Usage](#usage)
-  1. [Generate clustering table](#table)
+  1. build_clustering_table.py [Generate clustering table](#table)
   2. [Polish clustering table](#polish)
   3. [Compute and Graph clustering table](#graph)
 
@@ -89,7 +89,7 @@ terminal$ conda activate conkatseq
 terminal(conkatseq)$
 ```
 
-**NOTE:** To deactivate the ConkatSeq conda environment, type the following ```conda activate conkatseq```
+**NOTE:** To deactivate or get out of the ConkatSeq conda environment, type the following: ```terminal(conkatseq)$ conda activate conkatseq```
 
 Install the required software dependencies inside the ConkatSeq conda environment: 
 
@@ -106,11 +106,13 @@ Use the git command to obtain this ConkatSeq repository which will contain all t
 ```
 terminal(conkatseq)$ git clone https://github.com/brady-lab-rockefeller/conkat_seq
 terminal(conkatseq)$ ls conkat_seq
-
+conkat_seq  README.md  resources
 ```
 
 
 ## <a name="input"></a> Usage
+
+
 
 
 
