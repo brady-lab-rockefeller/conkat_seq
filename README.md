@@ -112,7 +112,11 @@ conkat_seq  README.md  resources
 
 ## <a name="input"></a> Usage
 
-#### <a name="table"></a> **i) Generate clustering table** 
+ConkatSeq consist of three main components divided in three scripts which is how the tool is run. The following will describe how each script is being used with its data and options.
+
+### <a name="table"></a> **i) Generate clustering table** 
+
+
 
 
 
