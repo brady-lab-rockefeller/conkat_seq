@@ -123,23 +123,21 @@ ConkatSeq consist of three main components divided in three scripts which is how
 The following command shows how to run the build_clustering.py script with its required options:
 
 ```
-
 (conkatseq)[terminal conkat_seq]$ python build_clustering_table.py  -i INPATH -o OUTPATH -s SAMPLE_NAME -l STRIP_LEFT -t TRUNCATE -c CLUSTER_ID
 ```
 
 |**Required Script options**|**Function**|
 |---|---|
 |**-i INPATH**|**ENTIRE** folder path to the input file(s) must be provided|
-|**-i OUTPUT**||  
-|**-i SAMPLE_NAME**||  
-|**-i STRIP_LEFT**||  
-|**-i TRUNCATE**||  
-|**-i CLUSTER_ID**||  
+|**-o OUTPUT**||  
+|**-s SAMPLE_NAME**||  
+|**-l STRIP_LEFT**||  
+|**-t TRUNCATE**||  
+|**-c CLUSTER_ID**||  
 
 
 For more information about the options type the following that will provide descriptions for every existing parameter.:
 ```
-
 (conkatseq)[terminal conkat_seq]$ python build_clustering_table.py -h
 usage: build_clustering_table.py [-h] -i INPATH -o OUTPATH -s SAMPLE_NAME -l
                                  STRIP_LEFT -t TRUNCATE -c CLUSTER_ID
