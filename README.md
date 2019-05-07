@@ -239,7 +239,7 @@ python conkat_seq.py -l LIST_OF_CLUSTERING_DATAFRAMES  -o OUTPATH -a ALPHA -m MI
 |**-o OUTPUT**|**ENTIRE** folder path of where the output files should be located must be provided|  
 |**-a ALPHA**|numerical value that represents the pvalue threshold (ex: 0.05) used to remove insignificant cooccurences| 
 |**-m MIN_SHARED_OCCURANCES**|numerical value that represent the number of domain (ex: 3) occurance|  
-|**-flag_edges TRUNCATE**|perform monte carlo analysis (simulates models of possible domain occurances|  
+|**-flag_edges**|performs monte carlo analysis (simulates models of possible domain occurances|  
   
 
 For more information about the options, type the following that will provide descriptions for every existing parameter:
