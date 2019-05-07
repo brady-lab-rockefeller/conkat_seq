@@ -10,8 +10,8 @@ Table of Contents
 - [Installation](#installation)
   1. [Dependencies](##hardware)
   2. [Install](#install)
-        a*  [ Git:](#git)
-        b*  [Conda:](#conda)
+        *  [ Git:](#git)
+        *  [Conda:](#conda)
         *  [ConkatSeq:](#conkatseq)
         *  [Install ConkatSeq:](#installconkatseq)     
 - [Usage](#usage)
@@ -38,7 +38,7 @@ ConkatSeq uses three python scripts (build_clustering_table.py, filter_clusterin
 
 ## <a name="input"></a> Installation
 
-### <a name="hardware"></a> Dependencies
+### <a name="hardware"></a> i. Dependencies
 
 ConkatSeq currently supports any machine with Linux operating system and will require users to use a conda environment for installing the necessary software dependencies for ConkatSeq to run. 
 
@@ -46,17 +46,17 @@ ConkatSeq currently supports any machine with Linux operating system and will re
 |---|---|---|
 |**1) [Unix](https://www.linux.org/pages/download/)** <br/><br/> **(Any Mac or Linux OS machine)**|**1) [python 2.7](https://www.python.org/download/releases/2.7/)**  <br/><br/>  **2) [biopython](https://biopython.org/)** <br/><br/>  **3) [pandas](https://pandas.pydata.org)** <br/><br/> **4) [scipy](https://www.scipy.org/)** <br/><br/>  **5) [matplotlib](https://matplotlib.org/)** <br/><br/> **6) [statsmodel](https://www.statsmodels.org/stable/index.html)** <br/><br/> **7) [networkx](https://networkx.github.io/)** <br/><br/> **8) [vsearch](https://github.com/torognes/vsearch)**  | **1) [conda](https://conda.io/en/latest/)** 
 
-### <a name="install"></a> Install
+### <a name="install"></a> ii. Install
 
 All installations will take place on the command line via the terminal.
 
-### <a name="git"></a>**a) Git:** 
+#### <a name="git"></a>**a) Git:** 
 
 All related scripts required to run ConkatSeq can be found in this github repository which can be obtained via git. 
 
 The following links provides instructions to install git on a Mac or Linux OS: https://git-scm.com/downloads
 
-### <a name="conda"></a>**b) Conda:** 
+#### <a name="conda"></a>**b) Conda:** 
 
 **Download** and **install** the conda installer for Python 2.7 from the Anaconda distribution manager:
 
