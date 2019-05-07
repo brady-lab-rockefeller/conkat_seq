@@ -116,7 +116,7 @@ conkat_seq.py              conkat_utils.pyc  helpers.py                  __init_
 
 ConkatSeq consist of three main components divided in three scripts which is how the tool runs. The following will describe how each script is being used with its data and options.
 
-**NOTE:** To run ConkatSeq you must activate the conkat_seq conda environment created in the [ConkatSeq conda environment](#conkatseq2) section earlier and be inside the conkat_seq folder which was [downloaded from this repository](#download2): 
+**NOTE:** To run ConkatSeq you must activate its conda environment created in the [ConkatSeq conda environment](#conkatseq2) section earlier and be inside the conkat_seq folder which was [downloaded from this repository](#download2): 
 
 ### <a name="table"></a> **i) Generate clustering table** 
 
