@@ -86,17 +86,17 @@ Actiavte the ConkatSeq conda environment:
 
 ```
 terminal$ conda activate conkatseq
-(conkatseq)terminal$
+(conkatseq)[terminal]$
 ```
 
-**NOTE:** To deactivate or get out of the ConkatSeq conda environment, type the following: ```(conkatseq)terminal$ conda activate conkatseq```
+**NOTE:** To deactivate or get out of the ConkatSeq conda environment, type the following: ```(conkatseq)[terminal]$ conda activate conkatseq```
 
 Install the required software dependencies inside the ConkatSeq conda environment: 
 
 ```
-(conkatseq)terminal$ conda install -c anaconda pandas networkx statsmodels scipy
-(conkatseq)terminal$ conda install -c conda-forge biopython matplotlib  
-(conkatseq)terminal$ conda install -c bioconda vsearch
+(conkatseq)[terminal]$ conda install -c anaconda pandas networkx statsmodels scipy
+(conkatseq)[terminal]$ conda install -c conda-forge biopython matplotlib  
+(conkatseq)[terminal]$ conda install -c bioconda vsearch
 ```
 
 #### <a name="downloadconkatseq"></a> <a name="download2"></a> **d) Download ConkatSeq:** 
@@ -104,11 +104,11 @@ Install the required software dependencies inside the ConkatSeq conda environmen
 Use the git command to obtain this ConkatSeq repository which will contain all the necessary material required to run:
 
 ```
-(conkatseq)terminal$ git clone https://github.com/brady-lab-rockefeller/conkat_seq
-(conkatseq)terminal$ ls conkat_seq
+(conkatseq)[terminal]$ git clone https://github.com/brady-lab-rockefeller/conkat_seq
+(conkatseq)[terminal]$ ls conkat_seq
 conkat_seq  README.md  resources
-(conkatseq)terminal$ cd conkat_seq
-(conkatseq)terminal$ ls
+(conkatseq)[terminal]$ cd conkat_seq
+(conkatseq)[terminal conkat_seq]$ ls
 build_clustering_table.py  conkat_utils.py   filter_clustering_table.py  helpers.pyc  ref
 conkat_seq.py              conkat_utils.pyc  helpers.py                  __init__.py
 ```
