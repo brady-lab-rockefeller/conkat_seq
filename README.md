@@ -11,6 +11,7 @@ Table of Contents
   - [Dependencies](#hardware)
   - [Install](#install)
       
+      
   
 - [Usage](#usage)
   1. [Generate clustering table](#table)
@@ -50,7 +51,9 @@ All installations will take place on the command line via the terminal.
 
 **1) Install git:** 
 
-https://git-scm.com/downloads
+All related scripts required to run ConkatSeq can be found in this github repository which can be obtained via git. 
+
+The following links provides instructions to install git on a Mac or Linux OS: https://git-scm.com/downloads
 
 **2) Download and Install Conda:** 
 
