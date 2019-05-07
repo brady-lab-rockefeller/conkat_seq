@@ -52,13 +52,13 @@ All installations will take place on the command line via the terminal.
 
 #### <a name="git"></a>       **a) Git:** 
 
-All related scripts required to run ConkatSeq can be found in this github repository which can be obtained via git. 
+All related material required to run ConkatSeq can be found in this github repository which can be downloaded via git. 
 
 The following link provides instructions to install git on a Mac or Linux OS: https://git-scm.com/downloads
 
 #### <a name="conda"></a>     **b) Conda:** 
 
-**Download** and **install** the conda installer for Python 2.7 from the Anaconda distribution manager:
+Download and install the conda installer for Python 2.7 from the Anaconda distribution manager:
 
 [Mac](https://www.anaconda.com/distribution/#macos): 
 
@@ -77,7 +77,7 @@ terminal$ bash  Anaconda2-2019.03-Linux-x86_64.sh
 
 #### <a name="conkatseq"></a>  <a name="conkatseq2"></a>    **c) ConkatSeq conda environment:** 
 
-Create a conda environment with Python 2.7 dedicated for Conkatseq to run:
+Create a conda environment with Python 2.7 dedicated to run Conkatseq:
 
 ```
 terminal$ conda create --name conkatseq python=2.7
@@ -89,7 +89,7 @@ terminal$ conda activate conkatseq
 (conkatseq)[terminal]$
 ```
 
-**NOTE:** To deactivate or get out of the ConkatSeq conda environment, type the following: ```(conkatseq)[terminal]$ conda activate conkatseq```
+**NOTE:** To deactivate or get out of the ConkatSeq conda environment, type the following: ```(conkatseq)[terminal]$ conda deactivate conkatseq```
 
 Install the required software dependencies inside the ConkatSeq conda environment: 
 
@@ -101,7 +101,7 @@ Install the required software dependencies inside the ConkatSeq conda environmen
 
 #### <a name="downloadconkatseq"></a> <a name="download2"></a> **d) Download ConkatSeq:** 
 
-Use the git command to obtain this ConkatSeq repository which will contain all the necessary material required to run:
+Use the git command to obtain this ConkatSeq repository which will contain all the necessary material required for ConkarSeq to run:
 
 ```
 (conkatseq)[terminal]$ git clone https://github.com/brady-lab-rockefeller/conkat_seq
@@ -112,23 +112,25 @@ conkat_seq  README.md  resources
 build_clustering_table.py  conkat_utils.py   filter_clustering_table.py  helpers.pyc  ref
 conkat_seq.py              conkat_utils.pyc  helpers.py                  __init__.py
 ```
-## <a name="input"></a> Usage
+## <a name="usage"></a> Usage
 
-ConkatSeq consist of three main components divided in three scripts which is how the tool is run. The following will describe how each script is being used with its data and options.
+ConkatSeq consist of three main components divided in three scripts which is how the tool runs. The following will describe how each script is being used with its data and options.
 
-**NOTE:** To run ConkatSeq you must activate the conkatseq conda environment created in the [ConkatSeq conda environment](#conkatseq2) section earlier and be inside the conkat_seq which was [downloaded from this repository][#download2]: 
-
-### <a name="table"></a> **i) Generate clustering table** 
-
-### <a name="table"></a> **i) Generate clustering table** 
+**NOTE:** To run ConkatSeq you must activate the conkat_seq conda environment created in the [ConkatSeq conda environment](#conkatseq2) section earlier and be inside the conkat_seq folder which was [downloaded from this repository](#download2): 
 
 ### <a name="table"></a> **i) Generate clustering table** 
 
 
 
+### <a name="polish"></a> **i) Filter clustering table* 
+
+### <a name="graph"></a> **i) Compute and Graph clustering table** 
 
 
-## <a name="input"></a> Example
+
+
+
+## <a name="example"></a> Example
 
 
 https://rockefeller.app.box.com/s/rhrgw13ux6qdns0vax5i4cgyvgtfdyd7
