@@ -15,9 +15,9 @@ Table of Contents
         *  [ConkatSeq conda environment:](#conkatseq)
         *  [Install ConkatSeq:](#installconkatseq)     
 - [Usage](#usage)
-  1. [Generate clustering table (build_clustering_table.py)](#table)
-  2. [Polish clustering table (filter_clustering_table.py)](#polish)
-  3. [Compute and Graph clustering table (conkat_seq.py)](#graph)
+  1. [Generate clustering table] (build_clustering_table.py)(#table)
+  2. [Filter clustering table] (filter_clustering_table.py)(#polish)
+  3. [Compute and Graph clustering table] (conkat_seq.py)(#graph)
 
 - [Example](#example)
   
