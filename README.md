@@ -11,7 +11,7 @@ Table of Contents
   - [Dependencies](##hardware)
   - [Install](#install)
     1)  [ Git:](#git)
-      -[2) Conda:](#conda)
+    2)  [Conda:](#conda)
       -[3) ConkatSeq:](#conkatseq)
       -[4) Install ConkatSeq:](#installconkatseq)     
 - [Usage](#usage)
