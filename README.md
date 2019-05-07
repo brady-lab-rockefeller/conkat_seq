@@ -50,13 +50,13 @@ ConkatSeq currently supports any machine with Linux operating system and will re
 
 All installations will take place on the command line via the terminal.
 
-#### <a name="git"></a>**a) Git:** 
+#### <a name="git"></a>       **a) Git:** 
 
 All related scripts required to run ConkatSeq can be found in this github repository which can be obtained via git. 
 
 The following links provides instructions to install git on a Mac or Linux OS: https://git-scm.com/downloads
 
-#### <a name="conda"></a>**b) Conda:** 
+#### <a name="conda"></a>     **b) Conda:** 
 
 **Download** and **install** the conda installer for Python 2.7 from the Anaconda distribution manager:
 
@@ -75,7 +75,7 @@ terminal$ bash  Anaconda2-2019.03-Linux-x86_64.sh
 ```
 **NOTE:** Make sure you are in the path where the Anaconda2-2019.03-******-x86_64.sh file is located and with actual name of the file.
 
-**3) ConkatSeq conda environment:** 
+#### <a name="installconda"></a>     **d) ConkatSeq conda environment:** 
 
 Create a conda environment with Python 2.7 dedicated for Conkatseq to run:
 
