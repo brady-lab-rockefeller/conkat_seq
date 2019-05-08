@@ -19,6 +19,7 @@ Table of Contents
 #### Pre-processing steps (repeat for every targeted domain amplicon dataset)
 ---
 **Process 1: build_clustrering_table.py** 
+
 Pre-processing (primer removal, length trimming, dereplication) of subpool-demultiplexed amplicon reads. 
 
 Processed reads from all library subpools are clustered using VSEARCH implementation of the USEARCH algorithim. Each cluster contains a set of highly similar amplicon sequences (<95% identity) originating from one or more library subpools.
@@ -32,6 +33,7 @@ Processed reads from all library subpools are clustered using VSEARCH implementa
     2. Sequences of cluster centroids in a FASTA format	[sample_name.fna]
 
 **Process 2:filter_clustrering_table.py** 
+
 Parasing of the domain clustering table into a dataframe and filtering of domain varinats with low read counts or low number of subpool occurrences.
 
 - input
@@ -43,7 +45,8 @@ Parasing of the domain clustering table into a dataframe and filtering of domain
 
 #### Network analysis (Once per metagenomic library. Can integrate multiple domain amplicon datasets.)
 ---
-**Process 2: conkat_seq.py**
+**Process 3: conkat_seq.py**
+
 Pairwise statisical analysis of pairwise domain co-occurances. 
 
 To identify pairs of biosynthetic domains that originate from physically clustered metagenomic DNA, a 2x2 contingency table (the number of subpools containing both domain variants, one of the two only, or none of them) is constructed for each pair of domain sequence variants the co-occurrence significance is computed using Fisher's exact test. Pairs of domains showing non-random association based on p-value cutoff vlaue are predicted to be physically linked, and hence predicted to belong to the same gene cluster. Based on a pairwise list of statistically significant links a graph representation of domain networks is constructed, where nodes represent cluster of biosynthetic domains and edges link domains that are predicted to be physically co-clustered.
