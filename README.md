@@ -148,18 +148,18 @@ python conkat_seq.py -l LIST_OF_CLUSTERING_DATAFRAMES  -o OUTPATH -a ALPHA -m MI
 ```
 
 Arguments:  
-`-l LIST_OF_CLUSTERING_DATAFRAMES` full, absolute path to folder containing the input files
 
-`-o OUTPUT` sample name matching the input files
+`-l LIST_OF_CLUSTERING_DATAFRAMES` list of one or more domain clustering dataframes
 
-`-a ALPHA` only cosndier amplicon with more reads than min_read_size
+`-o OUTPATH` full, absolute path of folder to save results
 
-`-m MIN_SHARED_OCCURANCES` relative size threshold for removing amplicons with low reads within clusters (default 0.05)
+`-a ALPHA` maximal adjusted p-value threshold (default 10^-6)
 
-`-msp MIN_SUBPOOLS`  only consider amplicons detected in more than min_subpools subpools (default 3)
+`-m MIN_SHARED_OCCURANCES` only analyze domain pairs with co-occurances >min_shared_occurances (default 3)
 
-Optional arguments & flags:  
-`----merge_similar_id MERGE_SIMILAR_ID` identify threshold for merging similar domains within network (default 0.9)
+Optional arguments & flags:
+
+`--merge_similar_id MERGE_SIMILAR_ID` identify threshold for merging similar domains within network (default 0.9)
 
 `--threads THREADS`  threads to be used (default 1)
 
