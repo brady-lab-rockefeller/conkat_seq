@@ -1,4 +1,4 @@
-# CONKAT-seq [work in progress]
+# CONKAT-seq 
 
 CONKAT-seq (co-occurrence network analysis of targeted sequences) is targeted sequencing workflow that enables the exploration of rare biosynthetic gene clusters in complex metagenomes. CONKAT-seq is designed to reconstruct the clustered organization of biosynthetic domains in the metagenome based on the statistical analysis of amplicon co-occurrences in a partitioned library of large insert metagenomic clones. Briefly, high molecular weight DNA from soil samples are extracted and cloned to construct large insert metagenomic library which preserves the linkage between co-clustered genes. Library clones are randomly partitioned into hundreds of wells (subpools), and DNA sequence encoding for biosynthetic domains of interest are amplified using barcoded primers. Amplicon de-barcoding identifies the positioning of each biosynthetic domain within the array of subpools and co-occurrence frequencies of biosynthetic domain variants across all subpools are recorded. Pairwise statistical analysis of domain co-occurrence (Fisher’s exact test) identifies domain pairs that show strong linkage and is used to assign amplicon variants into distinct biosynthetic domain networks. Finally, CONKAT-seq predictions are visualized as networks, where nodes represent sequence variants of the targeted biosynthetic domains and edges link domains predicted to be physically co-clustered in the metagenomic DNA. 
 
@@ -34,7 +34,7 @@ Parasing of the domain clustering table into a dataframe and filtering of domain
     1. Domain amplicons clustering table in a UCLUST-format tabbed text format [sample_name.txt]
     2. Sequences of cluster centroids in a FASTA format	[sample_name.fna]
        
-- Output
+- output
     1. Filtered domain clustering dataframe [sample_name.csv]
 
 #### Network analysis (Once per metagenomic library. Can integrate multiple domain amplicon datasets.)
