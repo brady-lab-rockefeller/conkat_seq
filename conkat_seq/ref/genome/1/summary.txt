@@ -1,0 +1,13 @@
+#Summary
+#Generated on	Thu Apr 18 11:35:57 EDT 2019
+#Version	5
+chroms	1
+bases	4657652
+defined	4641652
+undefined	16000
+contigs	1
+scaffolds	1
+interpad	300
+source	/nasdata/Neev/repos/conkat_seq/resources/Ecoli_Genome_ref.fasta
+bytes	4708035
+last modified	1555541208377
