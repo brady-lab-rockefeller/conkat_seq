@@ -71,7 +71,7 @@ In order to use "clear_host_reads" mode (removal of amplicons matching library h
 - **[statsmodel](https://www.statsmodels.org/stable/index.html)** 
 - **[networkx](https://networkx.github.io/)** 
 
-## **Alternatively users can also install the conda package manager and create a conda environment with all of the required dependencies installed and will be able to use and run CONKAT-seq in the conda environment:**
+#### **Alternatively users can also install the conda package manager and create a conda environment with all of the required dependencies installed and will be able to use and run CONKAT-seq in the conda environment:**
 
 ```
 conda install -c anaconda pandas networkx statsmodels scipy
