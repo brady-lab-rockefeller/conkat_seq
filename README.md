@@ -123,8 +123,7 @@ Arguments:
 
 `-mrs MIN_READ_SIZE` only cosndier amplicon with more reads than min_read_size
 
-`-rst  RELATIVE_SIZE_THRESHOLD` relative size threshold for removing amplicons with low reads
-                                fraction of reads in comparison to max within cluster (default 0.05)
+`-rst  RELATIVE_SIZE_THRESHOLD` relative size threshold for removing amplicons with low reads (fraction of reads in comparison to max within cluster, default 0.05)
 
 `-msp MIN_SUBPOOLS`  only consider amplicons detected in more than min_subpools subpools (default 3)
 
