@@ -46,7 +46,7 @@ Pairwise statisical analysis of pairwise domain co-occurances. To identify pairs
     1. One or more filtered domain clustering dataframe [sample_name.csv]
 
 - output
-    2. Predicted networks of chromosomally co-clustered biosynthetic domains in a GraphML format [sample_name.graphml]
+    1. Predicted networks of chromosomally co-clustered biosynthetic domains in a GraphML format [sample_name.graphml]
 
 ## Installation and Dependencies 
 
