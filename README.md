@@ -12,49 +12,55 @@ Table of Contents
   1. [Generate clustering table](#table) (build_clustering_table.py)
   2. [Filter clustering table](#polish) (filter_clustering_table.py)
   3. [Compute and Graph clustering table](#graph) (conkat_seq.py)
-
 - [Example](#example)
   
 ## How it works
-
+---
 CONKAT-seq requires 3 processing steps to process subpool-demultiplexed amplicon sequencing data (FASTA format) to predicted networks of chromosomally co-clustered biosynthetic domains (GraphML format).
 
-#Pre-processing steps (repeat for every targeted domain amplicon dataset)
+#### Pre-processing steps (repeat for every targeted domain amplicon dataset)
 
-**build_clustrering_table**: Pre-processing (primer removal, length trimming, dereplication) of subpool-demultiplexed amplicon reads. Processed reads from all library subpools are clustered using VSEARCH implementation of the USEARCH algorithem. Each cluster contains a set of highly similar amplicon sequences (<95% identity) originating from one or more library subpools.
+**build_clustrering_table.py** 
+Pre-processing (primer removal, length trimming, dereplication) of subpool-demultiplexed amplicon reads. Processed reads from all library subpools are clustered using VSEARCH implementation of the USEARCH algorithem. Each cluster contains a set of highly similar amplicon sequences (<95% identity) originating from one or more library subpools.
 
-- Input: Folder containg amplicon sequencing fasta file(s). Files must be demultiplexed according to subpool amplicon barcode.  For example, if the targeted domain amplifcation was performed on a 384 subpools library (i.e., 384 PCR reactions), the demultiplexed data will consist of 384 individual FASTA files representing each one subpool sample.
+- input:
+    -- Folder containg amplicon sequencing fasta file(s). Files must be demultiplexed according to subpool amplicon barcode. For example, if the targeted domain amplifcation was performed on a 384 subpools library (i.e., 384 PCR reactions), the demultiplexed data will consist of 384 individual FASTA files representing each one subpool sample.
+    
+- output
+    -- Domain amplicons clustering table in a UCLUST-format tabbed text format [sample_name.txt]
+    -- Sequences of cluster centroids in a FASTA format	[sample_name.fna]
 
-- Output: 1. Domain amplicons clustering table in a UCLUST-format tabbed text format [sample_name.txt]
-        2. Sequences of cluster centroids in a FASTA format	[sample_name.fna]
-
-**filter_clustrering_table**: Parasing of the domain clustering table into a dataframe and filtering of domain varinats with low read counts or low number of subpool occurrences.
-
-Input: 1. Domain amplicons clustering table in a UCLUST-format tabbed text format [sample_name.txt]
-       2. Sequences of cluster centroids in a FASTA format	[sample_name.fna]
+**filter_clustrering_table.py** 
+Parasing of the domain clustering table into a dataframe and filtering of domain varinats with low read counts or low number of subpool occurrences.
+- input
+    -- Domain amplicons clustering table in a UCLUST-format tabbed text format [sample_name.txt]
+    -- Sequences of cluster centroids in a FASTA format	[sample_name.fna]
        
-Output: Filtered domain clustering dataframe [sample_name.csv]
+- Output
+    -- Filtered domain clustering dataframe [sample_name.csv]
 
-#Network analysis (Once per metagenomic library. Can integrate multiple domain amplicon datasets.)
+#### Network analysis (Once per metagenomic library. Can integrate multiple domain amplicon datasets.)
 
-**conkat_seq**: Pairwise statisical analysis of pairwise domain co-occurances. To identify pairs of biosynthetic domains that originate from physically clustered metagenomic DNA, a 2x2 contingency table (the number of subpools containing both domain variants, one of the two only, or none of them) is constructed for each pair of domain sequence variants the co-occurrence significance is computed using Fisher's exact test. Pairs of domains showing non-random association based on p-value cutoff vlaue are predicted to be physically linked, and hence predicted to belong to the same gene cluster. Based on a pairwise list of statistically significant links a graph representation of domain networks is constructed, where nodes represent cluster of biosynthetic domains and edges link domains that are predicted to be physically co-clustered.
+**conkat_seq.py**
+Pairwise statisical analysis of pairwise domain co-occurances. To identify pairs of biosynthetic domains that originate from physically clustered metagenomic DNA, a 2x2 contingency table (the number of subpools containing both domain variants, one of the two only, or none of them) is constructed for each pair of domain sequence variants the co-occurrence significance is computed using Fisher's exact test. Pairs of domains showing non-random association based on p-value cutoff vlaue are predicted to be physically linked, and hence predicted to belong to the same gene cluster. Based on a pairwise list of statistically significant links a graph representation of domain networks is constructed, where nodes represent cluster of biosynthetic domains and edges link domains that are predicted to be physically co-clustered.
 
-Input: One or more filtered domain clustering dataframe [sample_name.csv]
+- input
+    -- One or more filtered domain clustering dataframe [sample_name.csv]
 
-Output: Predicted networks of chromosomally co-clustered biosynthetic domains in a GraphML format [sample_name.graphml]
+- output
+    -- Predicted networks of chromosomally co-clustered biosynthetic domains in a GraphML format [sample_name.graphml]
 
-## <a name="installation"></a> Installation and Dependencies
-
+## Installation and Dependencies 
+--- 
 CONKAT-seq is available for Linux and MacOS platforms and requires the installation of Python (v2.7.x) and VSEARCH (v2.9.1+). In order to use "clear_host_reads" mode (removal of amplicons matching library host genome, ususally E. coli) BBMap and SAMTOOLS (v3.0.0+) are needed to be in the user path.
 
 #Required Python libraries
-
-**[biopython](https://biopython.org/)** <br/><br/>  
-**[pandas](https://pandas.pydata.org)** <br/><br/> 
-**[scipy](https://www.scipy.org/)** <br/><br/>  
-**[matplotlib](https://matplotlib.org/)** <br/><br/> 
-**[statsmodel](https://www.statsmodels.org/stable/index.html)** <br/><br/> 
-**[networkx](https://networkx.github.io/)** <br/><br/> 
+- **[biopython](https://biopython.org/)** 
+- **[pandas](https://pandas.pydata.org)**
+- **[scipy](https://www.scipy.org/)**  
+- **[matplotlib](https://matplotlib.org/)** 
+- **[statsmodel](https://www.statsmodels.org/stable/index.html)** 
+- **[networkx](https://networkx.github.io/)**  
 
 ```
 conda install -c anaconda pandas networkx statsmodels scipy
@@ -65,9 +71,9 @@ conda install -c bioconda vsearch
 To download CONKAT-seq using Git:
 ```
 git clone https://github.com/brady-lab-rockefeller/conkat_seq
-
 ```
-
+## Usage
+---
 #### build_clustering_table.py:
 
 ```
@@ -95,6 +101,11 @@ Optional arguments & flags:
 #### filter_clustering_table.py:
 
 ```
+usage: filter_clustering_table.py [-h] -i INPATH -s SAMPLE_NAME -mrs
+                                  MIN_READ_SIZE -rst RELATIVE_SIZE_THRESHOLD
+                                  -msp MIN_SUBPOOLS [--threads THREADS]
+                                  [--verbose]
+
 python filter_clustering_table.py  -i INPATH -s SAMPLE_NAME -mrs MIN_READ_SIZE -rst RELATIVE_SIZE_THRESHOLD -msp MIN_SUBPOOLS 
 ```
 
@@ -112,6 +123,12 @@ Optional arguments & flags:
 #### conkat_seq.py:
 
 ```
+usage: conkat_seq.py [-h] -l LIST_OF_CLUSTERING_DATAFRAMES
+                     [LIST_OF_CLUSTERING_DATAFRAMES ...] -o OUTPATH
+                     [-m MIN_SHARED_OCCURANCES] [-a ALPHA]
+                     [--merge_similar_id MERGE_SIMILAR_ID] [--threads THREADS]
+                     --flag_edges [--verbose] [--override]
+
 python conkat_seq.py -l LIST_OF_CLUSTERING_DATAFRAMES  -o OUTPATH -a ALPHA -m MIN_SHARED_OCCURANCES  --flag_edges 
 ```
 
