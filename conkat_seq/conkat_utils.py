@@ -286,7 +286,7 @@ def flag_barcode_swap_edges(G,pval=0.05,N=500,verb=False):
     return (G,P,flag)
   
 
-def merge_similar_nodes(G,cluster_id=0.9,min_net_size=3,threads=20,verb=False,run=True):   
+def merge_similar_nodes(G, cluster_id=0.9, min_net_size=3, threads=20, verb=False, run=True):   
     
     """Collapse similar nodes (sequence identify>cluser_id) within domain networks 
     
@@ -339,7 +339,7 @@ def merge_similar_nodes(G,cluster_id=0.9,min_net_size=3,threads=20,verb=False,ru
         table_filename = os.path.join(tmpdir, table_filename)
 
         # Ensure the file is read/write by the creator only
-        saved_umask = os.umask(0077)
+        saved_umask = os.umask(001)
 
         s = pd.Series(dict(zip(sub,sub)))
         s = s.map(clusterSize_dict).sort_values(ascending=False)
@@ -349,14 +349,13 @@ def merge_similar_nodes(G,cluster_id=0.9,min_net_size=3,threads=20,verb=False,ru
         makeFasta(headers,seqs,input_file)
 
         cmd = ('vsearch '
-               '--threads %s ' 
                '--cluster_fast %s '
                '--id %s '
                '--centroids %s '
                '--uc %s '
                '-sizein '
-               '-minsize 1' %
-                (threads,input_file,cluster_id,centroids_filename,table_filename)
+               '--threads %s '  %
+                (input_file,cluster_id,centroids_filename,table_filename,threads)
                )
 
         if verb:
@@ -369,11 +368,14 @@ def merge_similar_nodes(G,cluster_id=0.9,min_net_size=3,threads=20,verb=False,ru
         if verb:
                 log('Parsing OTU information from %s' % table_filename)
 
+        no_table_flag = False
         try:
             otuDF = pd.read_csv(table_filename,sep='\t',index_col=None)
             otuDF.columns  = ['type','cluster','length','ident','strand','','','align','q','h']
         except:
             log('Unable to read clustering table %s...' % table_filename )
+            no_table_flag = True
+
 
         #except:
         #print 'IOError'
@@ -389,6 +391,9 @@ def merge_similar_nodes(G,cluster_id=0.9,min_net_size=3,threads=20,verb=False,ru
                 os.rmdir(tmpdir)
             except:
                 log('Unable to remove temp files at %s...' % tmpdir)
+        
+        if (no_table_flag):
+            continue
         
         #Only consider 'Hit' or 'Seed' rows 
         otuDF = otuDF[ (otuDF.type == 'H') | (otuDF.type == 'S') ]

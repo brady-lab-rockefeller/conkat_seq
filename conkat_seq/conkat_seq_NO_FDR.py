@@ -142,7 +142,7 @@ if __name__ == "__main__":
     else:
         log('Building domain clustering graph...')
         G = build_graph(domain_occurances_table, merged_filtered_clustering_table, 
-            alpha, method='fdr_tsbky')
+            alpha, method='pvalue')
         nx.write_graphml(G, networkFile)
 
     #flag hop

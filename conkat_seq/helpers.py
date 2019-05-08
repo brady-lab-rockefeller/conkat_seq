@@ -27,7 +27,9 @@ def execute(command,screen=False):
         nextline = process.stdout.readline()
         if nextline == '' and process.poll() is not None:
             break
-        msg = msg + nextline
+        
+        msg = msg + str(nextline)
+        
         if screen:
             sys.stdout.write(nextline)
             sys.stdout.flush()
