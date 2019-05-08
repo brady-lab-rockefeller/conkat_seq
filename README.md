@@ -188,10 +188,6 @@ python conkat_seq.py -l LIST_OF_CLUSTERING_DATAFRAMES  -o OUTPATH -a ALPHA -m MI
 
 `--override`  re-write existing files
 
-
-
-https://rockefeller.app.box.com/s/rhrgw13ux6qdns0vax5i4cgyvgtfdyd7
-
 ## <a name="example"></a> Example
 
 This example uses sample data (demultiplexed amplicon sequencing data  (384 fasta files)) made available and can be downloaded from the following link: https://rockefeller.app.box.com/s/rhrgw13ux6qdns0vax5i4cgyvgtfdyd7 being processed in each of 3 processing steps of the CONKAT-seq workflow.
