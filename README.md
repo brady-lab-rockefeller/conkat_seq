@@ -1,284 +1,137 @@
-ConkatSeq Manual -- still in progress
-================
+# CONKAT-seq [work in progress]
 
-#### ConkatSeq is a python program for concatenating amplicon sequencing data back to its chromosomal location in the genome. (Niv describe) 
+***********************
+
+CONKAT-seq (co-occurrence network analysis of targeted sequences) is targeted sequencing workflow that enables the exploration of rare biosynthetic gene clusters in complex metagenomes. CONKAT-seq is designed to reconstruct the clustered organization of biosynthetic domains in the metagenome based on the statistical analysis of amplicon co-occurrences in a partitioned library of large insert metagenomic clones. Briefly, high molecular weight DNA from soil samples are extracted and cloned to construct large insert metagenomic library which preserves the linkage between co-clustered genes. Library clones are randomly partitioned into hundreds of wells (subpools), and DNA sequence encoding for biosynthetic domains of interest are amplified using barcoded primers. Amplicon de-barcoding identifies the positioning of each biosynthetic domain within the array of subpools and co-occurrence frequencies of biosynthetic domain variants across all subpools are recorded. Pairwise statistical analysis of domain co-occurrence (Fisher’s exact test) identifies domain pairs that show strong linkage and is used to assign amplicon variants into distinct biosynthetic domain networks. Finally, CONKAT-seq predictions are visualized as networks, where nodes represent sequence variants of the targeted biosynthetic domains and edges link domains predicted to be physically co-clustered in the metagenomic DNA. 
 
 Table of Contents
 -----------------
-
-- [Data Input/Output](#inputandoutput)
-- [Installation](#installation)
-  1. [Dependencies](##hardware)
-  2. [Install](#install)
-        *  [Git](#git)
-        *  [Conda](#conda)
-        *  [Conda environment setup](#conkatseq)
-        *  [Download ConkatSeq](#downloadconkatseq)     
+- [How it works](#inputandoutput)
+- [Installation & Dependencies](#installation)
 - [Usage](#usage)
   1. [Generate clustering table](#table) (build_clustering_table.py)
   2. [Filter clustering table](#polish) (filter_clustering_table.py)
   3. [Compute and Graph clustering table](#graph) (conkat_seq.py)
 
 - [Example](#example)
-  1. [Initialize](#initialize)
-  2. [Run build_clustering_table.py](#runbuild)
-  3. [Run filter_clustering_table.py](#runfilter)
-  4. [Run conkat_seq.py](#runconkat)
-        
-## <a name="inputandoutput"></a> Data Input/Output
+  
+## How it works
 
+CONKAT-seq requires 3 processing steps to process subpool-demultiplexed amplicon sequencing data (FASTA format) to predicted networks of chromosomally co-clustered biosynthetic domains (GraphML format).
 
-ConkatSeq uses three python scripts **(build_clustering_table.py, filter_clustering_table.py, conkat_seq.py)** to process **demultiplexed amplicon sequencing data (FASTA format)** and produce a **network graph of highly associated coccurence sequence clusters (GraphML format)**.  
+#Pre-processing steps (repeat for every targeted domain amplicon dataset)
 
+**build_clustrering_table**: Pre-processing (primer removal, length trimming, dereplication) of subpool-demultiplexed amplicon reads. Processed reads from all library subpools are clustered using VSEARCH implementation of the USEARCH algorithem. Each cluster contains a set of highly similar amplicon sequences (<95% identity) originating from one or more library subpools.
 
-|**Script**|**Input**|**Description**|**Output**|**Description**|
-|---|---|---|---|---|
-|**build_clustering_table.py**|**1) FASTA sequences (Illumina amplicon sequencing data file(s))**| 1) The amplicon sequencing data file(s) must be demultiplexed or split into its corresponding barcoded numbers of well plate. <br/><br/> *Ex: If the sequencing was performed on a 384 well plate, the demultiplexed data will consist of 384 individual FASTA files representing each barcoded sample well in the plate.*|**1) (sample_name)_OTU.txt**  <br/><br/> **2) (sample_name)_OTU.fna** | 1)Domain clustering table <br/><br/>  2) Domain centroid sequences
-|**filter_clustering_table.py**| 
-|**conkat_seq.py**|
+- Input: Folder containg amplicon sequencing fasta file(s). Files must be demultiplexed according to subpool amplicon barcode.  For example, if the targeted domain amplifcation was performed on a 384 subpools library (i.e., 384 PCR reactions), the demultiplexed data will consist of 384 individual FASTA files representing each one subpool sample.
 
+- Output: 1. Domain amplicons clustering table in a UCLUST-format tabbed text format [sample_name.txt]
+        2. Sequences of cluster centroids in a FASTA format	[sample_name.fna]
 
+**filter_clustrering_table**: Parasing of the domain clustering table into a dataframe and filtering of domain varinats with low read counts or low number of subpool occurrences.
 
-## <a name="installation"></a> Installation
+Input: 1. Domain amplicons clustering table in a UCLUST-format tabbed text format [sample_name.txt]
+       2. Sequences of cluster centroids in a FASTA format	[sample_name.fna]
+       
+Output: Filtered domain clustering dataframe [sample_name.csv]
 
-### <a name="hardware"></a> i. Dependencies
+#Network analysis (Once per metagenomic library. Can integrate multiple domain amplicon datasets.)
 
-ConkatSeq currently supports any machine with Linux operating system that has Python 2.7 and will require users to use a conda environment for installing the necessary software dependencies for ConkatSeq to run. 
+**conkat_seq**: Pairwise statisical analysis of pairwise domain co-occurances. To identify pairs of biosynthetic domains that originate from physically clustered metagenomic DNA, a 2x2 contingency table (the number of subpools containing both domain variants, one of the two only, or none of them) is constructed for each pair of domain sequence variants the co-occurrence significance is computed using Fisher's exact test. Pairs of domains showing non-random association based on p-value cutoff vlaue are predicted to be physically linked, and hence predicted to belong to the same gene cluster. Based on a pairwise list of statistically significant links a graph representation of domain networks is constructed, where nodes represent cluster of biosynthetic domains and edges link domains that are predicted to be physically co-clustered.
 
-|**Hardware**|**Software**|**Package Manager**|
-|---|---|---|
-|**1) [Unix](https://www.linux.org/pages/download/)** <br/><br/> **(Any Mac or Linux OS machine)**|**1) [python 2.7](https://www.python.org/download/releases/2.7/)**  <br/><br/>  **2) [biopython](https://biopython.org/)** <br/><br/>  **3) [pandas](https://pandas.pydata.org)** <br/><br/> **4) [scipy](https://www.scipy.org/)** <br/><br/>  **5) [matplotlib](https://matplotlib.org/)** <br/><br/> **6) [statsmodel](https://www.statsmodels.org/stable/index.html)** <br/><br/> **7) [networkx](https://networkx.github.io/)** <br/><br/> **8) [vsearch](https://github.com/torognes/vsearch)**  | **1) [conda](https://conda.io/en/latest/)** 
+Input: One or more filtered domain clustering dataframe [sample_name.csv]
 
-### <a name="install"></a> ii. Install
+Output: Predicted networks of chromosomally co-clustered biosynthetic domains in a GraphML format [sample_name.graphml]
 
-All installations will take place on the command line via the terminal.
+## <a name="installation"></a> Installation and Dependencies
 
-#### <a name="git"></a>       **a) Git:** 
+CONKAT-seq is available for Linux and MacOS platforms and requires the installation of Python (v2.7.x) and VSEARCH (v2.9.1+). In order to use "clear_host_reads" mode (removal of amplicons matching library host genome, ususally E. coli) BBMap and SAMTOOLS (v3.0.0+) are needed to be in the user path.
 
-All related material required to run ConkatSeq can be found in this github repository which can be downloaded via git. 
+#Required Python libraries
 
-The following link provides instructions to install git on a Mac or Linux OS: **https://git-scm.com/downloads**
-
-#### <a name="conda"></a>     **b) Conda:** 
-
-Download and install the conda installer for Python 2.7 from the Anaconda distribution manager:
-
-**[Mac](https://www.anaconda.com/distribution/#macos)**: 
+**[biopython](https://biopython.org/)** <br/><br/>  
+**[pandas](https://pandas.pydata.org)** <br/><br/> 
+**[scipy](https://www.scipy.org/)** <br/><br/>  
+**[matplotlib](https://matplotlib.org/)** <br/><br/> 
+**[statsmodel](https://www.statsmodels.org/stable/index.html)** <br/><br/> 
+**[networkx](https://networkx.github.io/)** <br/><br/> 
 
 ```
-terminal$ wget  https://repo.anaconda.com/archive/Anaconda2-2019.03-MacOSX-x86_64.sh
-terminal$ bash  Anaconda2-2019.03-MacOSX-x86_64.sh
+conda install -c anaconda pandas networkx statsmodels scipy
+conda install -c conda-forge biopython matplotlib  
+conda install -c bioconda vsearch
 ```
 
-**[Linux](https://www.anaconda.com/distribution/#linux)**: 
+To download CONKAT-seq using Git:
+```
+git clone https://github.com/brady-lab-rockefeller/conkat_seq
 
 ```
-terminal$ wget  https://repo.anaconda.com/archive/Anaconda2-2019.03-Linux-x86_64.sh
-terminal$ bash  Anaconda2-2019.03-Linux-x86_64.sh
-```
-**NOTE:** Make sure you are in the path where the Anaconda2-2019.03-******-x86_64.sh file is located and with actual name of the file.
-
-#### <a name="conkatseq"></a>  <a name="conkatseq2"></a>    **c) ConkatSeq conda environment:** 
-
-Create a conda environment with Python 2.7 dedicated to run Conkatseq:
-
-```
-terminal$ conda create --name conkatseq python=2.7
-```
-Actiavte the ConkatSeq conda environment:
-
-```
-terminal$ conda activate conkatseq
-(conkatseq)[terminal]$
-```
-
-**NOTE:** To deactivate or get out of the ConkatSeq conda environment, type the following: ```(conkatseq)[terminal]$ conda deactivate conkatseq```
-
-Install the required software dependencies inside the ConkatSeq conda environment: 
-
-```
-(conkatseq)[terminal]$ conda install -c anaconda pandas networkx statsmodels scipy
-(conkatseq)[terminal]$ conda install -c conda-forge biopython matplotlib  
-(conkatseq)[terminal]$ conda install -c bioconda vsearch
-```
-
-#### <a name="downloadconkatseq"></a> <a name="download2"></a> **d) Download ConkatSeq:** 
-
-Use the git command to obtain this ConkatSeq repository which will contain all the necessary material required for ConkarSeq to run:
-
-```
-(conkatseq)[terminal]$ git clone https://github.com/brady-lab-rockefeller/conkat_seq
-(conkatseq)[terminal]$ ls conkat_seq
-conkat_seq  README.md  resources
-(conkatseq)[terminal]$ cd conkat_seq
-(conkatseq)[terminal conkat_seq]$ ls
-build_clustering_table.py  conkat_utils.py   filter_clustering_table.py  helpers.pyc  ref
-conkat_seq.py              conkat_utils.pyc  helpers.py                  __init__.py
-```
-## <a name="usage"></a> Usage
-
-ConkatSeq consist of three main components divided in three scripts which is how the tool runs. The following section will describe how each script is being used with its data and options.
-
-**NOTE:** To run ConkatSeq you must activate its conda environment created in the [ConkatSeq conda environment](#conkatseq2) section earlier and be inside the conkat_seq folder which was [downloaded from this repository](#download2): 
-
-### <a name="table"></a>  <a name="build2"></a>  **i) Generate clustering table** 
 
 #### build_clustering_table.py:
 
-The build_clustering_table.py script is the first step and component in the ConkatSeq tool. 
-
-The following command shows how to run the build_clustering.py script with its required options:
 ```
-(conkatseq)[terminal conkat_seq]$ python build_clustering_table.py  -i INPATH -o OUTPATH -s SAMPLE_NAME -l STRIP_LEFT -t TRUNCATE -c CLUSTER_ID
-```
-
-|**Required Script options**|**Options use**|
-|---|---|
-|**-i INPATH**|**ENTIRE** folder path of the input file(s) must be provided|
-|**-o OUTPUT**|**ENTIRE** folder path of where the output files should be located must be provided|  
-|**-s SAMPLE_NAME**|name to provide for the outputs|  
-|**-l STRIP_LEFT**|numerical value that represent the number if bases (ex: 10) to remove at the left side of the read (usually primer length) |  
-|**-t TRUNCATE**|numerical value that represents the number of bases (ex: 100) to keep for each read|  
-|**-c CLUSTER_ID**|numerical value in decimal point (ex: 0.95) that represents sequence holomolgy identity threshold for clustering|  
-
-
-For more information about the options, type the following that will provide descriptions for every existing parameter:
-```
-(conkatseq)[terminal conkat_seq]$ python build_clustering_table.py -h
 usage: build_clustering_table.py [-h] -i INPATH -o OUTPATH -s SAMPLE_NAME -l
                                  STRIP_LEFT -t TRUNCATE -c CLUSTER_ID
                                  [--host_path HOST_PATH] [--threads THREADS]
                                  [--verbose] [--remove_files]
-
-build_clustering_table script
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -i INPATH, --inpath INPATH
-                        subpool demultiplexed read files directory
-  -o OUTPATH, --outpath OUTPATH
-                        output directory for processed files
-  -s SAMPLE_NAME, --sample_name SAMPLE_NAME
-                        sample name for output files
-  -l STRIP_LEFT, --strip_left STRIP_LEFT
-                        number of bases to strip (typically primer length)
-  -t TRUNCATE, --truncate TRUNCATE
-                        number of bases to keep
-  -c CLUSTER_ID, --cluster_id CLUSTER_ID
-                        identity threshold for amplicon clustering, default =
-                        0.95
-  --host_path HOST_PATH
-                        path to host refrence fasta file if read filtering is
-                        required, default = False
-  --threads THREADS     number of threads to use by vsearch, default = 1
-  --verbose             increase output verbosity
-  --remove_files        do not keep processed read files
+                                 
+python build_clustering_table.py  -i INPATH -o OUTPATH -s SAMPLE_NAME -l STRIP_LEFT -t TRUNCATE -c CLUSTER_ID
 ```
-### <a name="table"></a>  <a name="conkatseq3"></a>  **ii) Filter clustering table** 
+Arguments:  
+`-i INPATH` full, absolute path to folder containing the demultiplexed subpool FASTA files
+`-o OUTPUT` full, absolute path to where output files will be saved
+`-s SAMPLE_NAME` name to provide for the output files
+`-l STRIP_LEFT` number of bases to remove at the start of the reads (usually primer length)
+`-t TRUNCATE` length of sequence keep following bases removal (shorter sequences are discarded)
+`-c CLUSTER_ID`  minimum sequence identity for clustering (a fraction between 0.0 and 1.0, default 0.95)
+
+Optional arguments & flags:  
+`--host_path HOST_PATH`  full, absolute path to host reference genome in FASTA format. Matching reads will be removed
+`--threads THREADS`  threads to be used (default 1)
+`--verbose`  increas verbosity
+`--remove_files`  remove intermediate processeing files
 
 #### filter_clustering_table.py:
-
-The filter_clustering_table.py script is the second step and component in the ConkatSeq tool and uses the outputs produced from the first component from the [build_clustering_table.py](#build2). 
-
-The following command shows how to run the filter_clustering_table.py script with its required options:
 
 ```
 python filter_clustering_table.py  -i INPATH -s SAMPLE_NAME -mrs MIN_READ_SIZE -rst RELATIVE_SIZE_THRESHOLD -msp MIN_SUBPOOLS 
 ```
-|**Required Script options**|**Options use**|
-|---|---|
-|**-i INPATH**|**ENTIRE** folder path of the input file(s) must be provided|
-|**-s SAMPLE_NAME**|name to provide for the outputs|  
-|**-mrs MIN_READ_SIZE**|numerical value that represents the number of amplicon reads (ex: 3) to consider|  
-|**-rst  RELATIVE_SIZE_THRESHOLD**|numerical value that represents the pvalue threshold (ex: 0.05) used to remove insignificant reads|  
-|**-msp MIN_SUBPOOLS**|numerical value that represents the number of seperate subpools (ex: 3) amplicons were detected|  
 
-For more information about the options, type the following that will provide descriptions for every existing parameter:
+Arguments:  
+`-i INPATH` full, absolute path to folder containing the input files
+`-s SAMPLE_NAME` sample name matching the input files 
+`-mrs MIN_READ_SIZE` only cosndier amplicon with more reads than min_read_size
+`-rst  RELATIVE_SIZE_THRESHOLD` relative size threshold for removing amplicons with low reads within clusters (default 0.05)
+`-msp MIN_SUBPOOLS`  only consider amplicons detected in more than min_subpools subpools (default 3)
 
-```
-
-(conkatseq)[terminal conkat_seq]$ python filter_clustering_table.py -h
-usage: filter_clustering_table.py [-h] -i INPATH -s SAMPLE_NAME -mrs
-                                  MIN_READ_SIZE -rst RELATIVE_SIZE_THRESHOLD
-                                  -msp MIN_SUBPOOLS [--threads THREADS]
-                                  [--verbose]
-
-build_clustering_table script
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -i INPATH, --inpath INPATH
-                        directory containing the domain clustering table
-  -s SAMPLE_NAME, --sample_name SAMPLE_NAME
-                        sample name for output files
-  -mrs MIN_READ_SIZE, --min_read_size MIN_READ_SIZE
-                        only cosndier amplicon with more reads than
-                        min_read_size
-  -rst RELATIVE_SIZE_THRESHOLD, --relative_size_threshold RELATIVE_SIZE_THRESHOLD
-                        relative size threshold for removing amplicons with
-                        low reads within clusters, default = 0.05
-  -msp MIN_SUBPOOLS, --min_subpools MIN_SUBPOOLS
-                        only consider amplicons detected in more than
-                        min_subpools subpools
-  --threads THREADS     number of threads to use by vsearch, default = 1
-  --verbose             increase output verbosity
-  ```
-
-### <a name="graph"></a> **iii) Compute and Graph clustering table** 
+Optional arguments & flags:  
+`--threads THREADS`  threads to be used (default 1)
+`--verbose`  increas verbosity
 
 #### conkat_seq.py:
 
-The conkat_seq.py script is the third and last step and component in the ConkatSeq tool and uses the outputs produced from the second component from the [filter_clustering_table.py](#conkatseq3). 
-
-The following command shows how to run the conkat_seq.py script with its required options:
 ```
-
 python conkat_seq.py -l LIST_OF_CLUSTERING_DATAFRAMES  -o OUTPATH -a ALPHA -m MIN_SHARED_OCCURANCES  --flag_edges 
 ```
 
-|**Required Script options**|**Options use**|
-|---|---|
-|**-l LIST_OF_CLUSTERING_DATAFRAMES**|**ENTIRE** folder path of the input file(s) must be provided|
-|**-o OUTPUT**|**ENTIRE** folder path of where the output files should be located must be provided|  
-|**-a ALPHA**|numerical value that represents the pvalue threshold (ex: 0.05) used to remove insignificant cooccurences| 
-|**-m MIN_SHARED_OCCURANCES**|numerical value that represent the number of domain (ex: 3) occurance|  
-|**-flag_edges**|performs monte carlo analysis (simulates models of possible domain occurances|  
-  
+Arguments:  
+`-l LIST_OF_CLUSTERING_DATAFRAMES` full, absolute path to folder containing the input files
+`-o OUTPUT` sample name matching the input files 
+`-a ALPHA` only cosndier amplicon with more reads than min_read_size
+`-m MIN_SHARED_OCCURANCES` relative size threshold for removing amplicons with low reads within clusters (default 0.05)
+`-msp MIN_SUBPOOLS`  only consider amplicons detected in more than min_subpools subpools (default 3)
 
-For more information about the options, type the following that will provide descriptions for every existing parameter:
+Optional arguments & flags:  
+`----merge_similar_id MERGE_SIMILAR_ID` identify threshold for merging similar domains within network (default 0.9)
+`--threads THREADS`  threads to be used (default 1)
+`--flag_edges` run monte carlo analysis to flag edges potenially affected by index swapping (default False)
+`--threads THREADS`  threads to be used (default 1)
+`--verbose`  increas verbosity
+`--override`  re-write existing files
 
-```
 
-(conkatseq)[terminal conkat_seq]$python conkat_seq.py -h
-usage: conkat_seq.py [-h] -l LIST_OF_CLUSTERING_DATAFRAMES
-                     [LIST_OF_CLUSTERING_DATAFRAMES ...] -o OUTPATH
-                     [-m MIN_SHARED_OCCURANCES] [-a ALPHA]
-                     [--merge_similar_id MERGE_SIMILAR_ID] [--threads THREADS]
-                     --flag_edges [--verbose] [--override]
-
-build_clustering_table script
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -l LIST_OF_CLUSTERING_DATAFRAMES [LIST_OF_CLUSTERING_DATAFRAMES ...], --list_of_clustering_dataframes LIST_OF_CLUSTERING_DATAFRAMES [LIST_OF_CLUSTERING_DATAFRAMES ...]
-                        one or more domain clustering dataframes for analysis
-  -o OUTPATH, --outpath OUTPATH
-                        results output directory
-  -m MIN_SHARED_OCCURANCES, --min_shared_occurances MIN_SHARED_OCCURANCES
-                        only analyze domain pairs with co-occurances >
-                        min_shared_occurances, default = 3
-  -a ALPHA, --alpha ALPHA
-                        maximal adjusted p-value threshold, default = 10**-6
-  --merge_similar_id MERGE_SIMILAR_ID
-                        identify threshold for merging similar domains within
-                        networks, default = 0.9
-  --threads THREADS     number of threads to use by vsearch, default = 1
-  --flag_edges          run monte carlo analysis to flag edges potenially
-                        affected by index swapping, default = False
-  --verbose             increase output verbosity
-  --override            re-write existing files
-  
- ```
+https://rockefeller.app.box.com/s/rhrgw13ux6qdns0vax5i4cgyvgtfdyd7
 
 ## <a name="example"></a> Example
 
