@@ -14,22 +14,26 @@ Table of Contents
   
 ## How it works
 
-CONKAT-seq requires 3 processing steps to process subpool-demultiplexed amplicon sequencing data (FASTA format) to predicted networks of chromosomally co-clustered biosynthetic domains (GraphML format).
+**CONKAT-seq** requires 3 processing steps to process subpool-demultiplexed amplicon sequencing data (FASTA format) to predicted networks of chromosomally co-clustered biosynthetic domains (GraphML format).
 
 #### Pre-processing steps (repeat for every targeted domain amplicon dataset)
---
-**build_clustrering_table.py** 
-Pre-processing (primer removal, length trimming, dereplication) of subpool-demultiplexed amplicon reads. Processed reads from all library subpools are clustered using VSEARCH implementation of the USEARCH algorithem. Each cluster contains a set of highly similar amplicon sequences (<95% identity) originating from one or more library subpools.
+---
+**Process 1: build_clustrering_table.py** 
+Pre-processing (primer removal, length trimming, dereplication) of subpool-demultiplexed amplicon reads. 
+
+Processed reads from all library subpools are clustered using VSEARCH implementation of the USEARCH algorithim. Each cluster contains a set of highly similar amplicon sequences (<95% identity) originating from one or more library subpools.
 
 - input:
-    1. Folder containg amplicon sequencing fasta file(s). Files must be demultiplexed according to subpool amplicon barcode. For example, if the targeted domain amplifcation was performed on a 384 subpools library (i.e., 384 PCR reactions), the demultiplexed data will consist of 384 individual FASTA files representing each one subpool sample.
+    1. Folder containing amplicon sequencing fasta file(s). Files must be demultiplexed according to subpool amplicon barcode.  
+    For example, if the targeted domain amplifcation was performed on a 384 subpools library (i.e., 384 PCR reactions), the demultiplexed data will consist of 384 individual FASTA files representing each one subpool sample.
     
 - output
     1. Domain amplicons clustering table in a UCLUST-format tabbed text format [sample_name.txt]
     2. Sequences of cluster centroids in a FASTA format	[sample_name.fna]
 
-**filter_clustrering_table.py** 
+**Process 2:filter_clustrering_table.py** 
 Parasing of the domain clustering table into a dataframe and filtering of domain varinats with low read counts or low number of subpool occurrences.
+
 - input
     1. Domain amplicons clustering table in a UCLUST-format tabbed text format [sample_name.txt]
     2. Sequences of cluster centroids in a FASTA format	[sample_name.fna]
@@ -39,8 +43,10 @@ Parasing of the domain clustering table into a dataframe and filtering of domain
 
 #### Network analysis (Once per metagenomic library. Can integrate multiple domain amplicon datasets.)
 ---
-**conkat_seq.py**
-Pairwise statisical analysis of pairwise domain co-occurances. To identify pairs of biosynthetic domains that originate from physically clustered metagenomic DNA, a 2x2 contingency table (the number of subpools containing both domain variants, one of the two only, or none of them) is constructed for each pair of domain sequence variants the co-occurrence significance is computed using Fisher's exact test. Pairs of domains showing non-random association based on p-value cutoff vlaue are predicted to be physically linked, and hence predicted to belong to the same gene cluster. Based on a pairwise list of statistically significant links a graph representation of domain networks is constructed, where nodes represent cluster of biosynthetic domains and edges link domains that are predicted to be physically co-clustered.
+**Process 2: conkat_seq.py**
+Pairwise statisical analysis of pairwise domain co-occurances. 
+
+To identify pairs of biosynthetic domains that originate from physically clustered metagenomic DNA, a 2x2 contingency table (the number of subpools containing both domain variants, one of the two only, or none of them) is constructed for each pair of domain sequence variants the co-occurrence significance is computed using Fisher's exact test. Pairs of domains showing non-random association based on p-value cutoff vlaue are predicted to be physically linked, and hence predicted to belong to the same gene cluster. Based on a pairwise list of statistically significant links a graph representation of domain networks is constructed, where nodes represent cluster of biosynthetic domains and edges link domains that are predicted to be physically co-clustered.
 
 - input
     1. One or more filtered domain clustering dataframe [sample_name.csv]
@@ -50,7 +56,7 @@ Pairwise statisical analysis of pairwise domain co-occurances. To identify pairs
 
 ## Installation and Dependencies 
 
-CONKAT-seq is available for Linux and MacOS platforms and requires the installation of Python (v2.7.x) and VSEARCH (v2.9.1+). In order to use "clear_host_reads" mode (removal of amplicons matching library host genome, ususally E. coli) BBMap and SAMTOOLS (v3.0.0+) are needed to be in the user path.
+CONKAT-seq is available for Linux and MacOS platforms and requires the installation of [Python (v2.7.x)] and VSEARCH (v2.9.1+). In order to use "clear_host_reads" mode (removal of amplicons matching library host genome, ususally E. coli) BBMap and SAMTOOLS (v3.0.0+) are needed to be in the user path.
 
 #Required Python libraries
 - **[biopython](https://biopython.org/)** 
