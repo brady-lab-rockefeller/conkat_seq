@@ -22,20 +22,20 @@ CONKAT-seq requires 3 processing steps to process subpool-demultiplexed amplicon
 Pre-processing (primer removal, length trimming, dereplication) of subpool-demultiplexed amplicon reads. Processed reads from all library subpools are clustered using VSEARCH implementation of the USEARCH algorithem. Each cluster contains a set of highly similar amplicon sequences (<95% identity) originating from one or more library subpools.
 
 - input:
-    -- Folder containg amplicon sequencing fasta file(s). Files must be demultiplexed according to subpool amplicon barcode. For example, if the targeted domain amplifcation was performed on a 384 subpools library (i.e., 384 PCR reactions), the demultiplexed data will consist of 384 individual FASTA files representing each one subpool sample.
+    1. Folder containg amplicon sequencing fasta file(s). Files must be demultiplexed according to subpool amplicon barcode. For example, if the targeted domain amplifcation was performed on a 384 subpools library (i.e., 384 PCR reactions), the demultiplexed data will consist of 384 individual FASTA files representing each one subpool sample.
     
 - output
-    -- Domain amplicons clustering table in a UCLUST-format tabbed text format [sample_name.txt]
-    -- Sequences of cluster centroids in a FASTA format	[sample_name.fna]
+    1. Domain amplicons clustering table in a UCLUST-format tabbed text format [sample_name.txt]
+    2. Sequences of cluster centroids in a FASTA format	[sample_name.fna]
 
 **filter_clustrering_table.py** 
 Parasing of the domain clustering table into a dataframe and filtering of domain varinats with low read counts or low number of subpool occurrences.
 - input
-    -- Domain amplicons clustering table in a UCLUST-format tabbed text format [sample_name.txt]
-    -- Sequences of cluster centroids in a FASTA format	[sample_name.fna]
+    1. Domain amplicons clustering table in a UCLUST-format tabbed text format [sample_name.txt]
+    2. Sequences of cluster centroids in a FASTA format	[sample_name.fna]
        
 - Output
-    -- Filtered domain clustering dataframe [sample_name.csv]
+    1. Filtered domain clustering dataframe [sample_name.csv]
 
 #### Network analysis (Once per metagenomic library. Can integrate multiple domain amplicon datasets.)
 
@@ -43,10 +43,10 @@ Parasing of the domain clustering table into a dataframe and filtering of domain
 Pairwise statisical analysis of pairwise domain co-occurances. To identify pairs of biosynthetic domains that originate from physically clustered metagenomic DNA, a 2x2 contingency table (the number of subpools containing both domain variants, one of the two only, or none of them) is constructed for each pair of domain sequence variants the co-occurrence significance is computed using Fisher's exact test. Pairs of domains showing non-random association based on p-value cutoff vlaue are predicted to be physically linked, and hence predicted to belong to the same gene cluster. Based on a pairwise list of statistically significant links a graph representation of domain networks is constructed, where nodes represent cluster of biosynthetic domains and edges link domains that are predicted to be physically co-clustered.
 
 - input
-    -- One or more filtered domain clustering dataframe [sample_name.csv]
+    1. One or more filtered domain clustering dataframe [sample_name.csv]
 
 - output
-    -- Predicted networks of chromosomally co-clustered biosynthetic domains in a GraphML format [sample_name.graphml]
+    2. Predicted networks of chromosomally co-clustered biosynthetic domains in a GraphML format [sample_name.graphml]
 
 ## Installation and Dependencies 
 
