@@ -1,7 +1,5 @@
 # CONKAT-seq [work in progress]
 
-***********************
-
 CONKAT-seq (co-occurrence network analysis of targeted sequences) is targeted sequencing workflow that enables the exploration of rare biosynthetic gene clusters in complex metagenomes. CONKAT-seq is designed to reconstruct the clustered organization of biosynthetic domains in the metagenome based on the statistical analysis of amplicon co-occurrences in a partitioned library of large insert metagenomic clones. Briefly, high molecular weight DNA from soil samples are extracted and cloned to construct large insert metagenomic library which preserves the linkage between co-clustered genes. Library clones are randomly partitioned into hundreds of wells (subpools), and DNA sequence encoding for biosynthetic domains of interest are amplified using barcoded primers. Amplicon de-barcoding identifies the positioning of each biosynthetic domain within the array of subpools and co-occurrence frequencies of biosynthetic domain variants across all subpools are recorded. Pairwise statistical analysis of domain co-occurrence (Fisher’s exact test) identifies domain pairs that show strong linkage and is used to assign amplicon variants into distinct biosynthetic domain networks. Finally, CONKAT-seq predictions are visualized as networks, where nodes represent sequence variants of the targeted biosynthetic domains and edges link domains predicted to be physically co-clustered in the metagenomic DNA. 
 
 Table of Contents
@@ -15,7 +13,7 @@ Table of Contents
 - [Example](#example)
   
 ## How it works
----
+
 CONKAT-seq requires 3 processing steps to process subpool-demultiplexed amplicon sequencing data (FASTA format) to predicted networks of chromosomally co-clustered biosynthetic domains (GraphML format).
 
 #### Pre-processing steps (repeat for every targeted domain amplicon dataset)
@@ -51,7 +49,7 @@ Pairwise statisical analysis of pairwise domain co-occurances. To identify pairs
     -- Predicted networks of chromosomally co-clustered biosynthetic domains in a GraphML format [sample_name.graphml]
 
 ## Installation and Dependencies 
---- 
+
 CONKAT-seq is available for Linux and MacOS platforms and requires the installation of Python (v2.7.x) and VSEARCH (v2.9.1+). In order to use "clear_host_reads" mode (removal of amplicons matching library host genome, ususally E. coli) BBMap and SAMTOOLS (v3.0.0+) are needed to be in the user path.
 
 #Required Python libraries
@@ -73,7 +71,7 @@ To download CONKAT-seq using Git:
 git clone https://github.com/brady-lab-rockefeller/conkat_seq
 ```
 ## Usage
----
+
 #### build_clustering_table.py:
 
 ```
