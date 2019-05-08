@@ -290,7 +290,7 @@ Make sure you are the conkat_seq folderActivate the conda environment and a
 
 ### <a name="runfilter"></a> iii. Run filter_clustering_table.py
 
-### <a name="runconkat"></a> iii. Run conkat_seq.py
+### <a name="runconkat"></a> iv. Run conkat_seq.py
 
 
 
