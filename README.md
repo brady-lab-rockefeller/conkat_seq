@@ -96,7 +96,7 @@ Arguments:
 `-c CLUSTER_ID`  minimum sequence identity for clustering (a fraction between 0.0 and 1.0, default 0.95)
 
 Optional arguments & flags:  
-`--host_path HOST_PATH`  full, absolute path to host reference genome in FASTA format. Matching reads will be removed
+`--host_path HOST_PATH`  full, absolute path to host reference genome in FASTA format (matching reads are removed)
 
 `--threads THREADS`  threads to be used (default 1)
 
