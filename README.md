@@ -284,6 +284,8 @@ optional arguments:
 
 ### <a name="initialize"></a> i. Initialize
 
+Make sure you are the conkat_seq folderActivate the conda environment and a
+
 ### <a name="runbuild"></a> ii. Run build_clustering_table.py
 
 ### <a name="runfilter"></a> iii. Run filter_clustering_table.py
