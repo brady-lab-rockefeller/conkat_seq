@@ -177,15 +177,58 @@ https://rockefeller.app.box.com/s/rhrgw13ux6qdns0vax5i4cgyvgtfdyd7
 
 ## <a name="example"></a> Example
 
-### <a name="initialize"></a> i. Initialize
+The example uses sample data (demultiplexed amplicon sequencing data  (384 fasta files)) made available and can be downloaded from the following link: https://rockefeller.app.box.com/s/rhrgw13ux6qdns0vax5i4cgyvgtfdyd7 being processed in each of the steps of the CONKAT-seq workflow.
 
-Make sure you are the conkat_seq folderActivate the conda environment and a
+Make sure you are in the conkat_seq folder in order to run:
 
-### <a name="runbuild"></a> ii. Run build_clustering_table.py
+```
+[user@terminal conkat_seq]$ ls
+conkat_seq  README.md  resources  
+[user@terminal conkat_seq]$ cd conkat_seq/
+[user@terminal conkat_seq]$ ls
+build_clustering_table.py  conkat_seq.py  conkat_utils.py  conkat_utils.pyc  filter_clustering_table.py  helpers.py  helpers.pyc  __init__.py  ref
+```
 
-### <a name="runfilter"></a> iii. Run filter_clustering_table.py
+### <a name="runbuild"></a> i. Run build_clustering_table.py
 
-### <a name="runconkat"></a> iv. Run conkat_seq.py
+First, run the build_clustering_table.py script on the sample data. You must provide the **ABSOLUTE** path of the location to the sample data and desired location of the outputs.  
+
+```
+[user@terminal conkat_seq]$ python build_clustering_table.py  -i /home/user/conkat_seq/data/ -o /home/user/conkat_seq/output/ -s sample_name -l 23 -t 210 -c 0.95 --threads 20 
+Building clustering table from amplicon data...
+384 files found...
+0 files processed...
+100 files processed...
+200 files processed...
+300 files processed...
+Merging de-replicated reads ->  /home/user/conkat_seq/output/sample_name.fna...
+Sorting merged reads...
+vsearch --threads 64 --sortbylength  /home/user/conkat_seq/output/sample_name.fna --output  /home/user/conkat_seq/output/sample_name_SORTED.fna 
+Clustering merged reads...
+vsearch --threads 64 --cluster_size  /home/user/conkat_seq/output/sample_name_SORTED.fna --id 0.95 --iddef 1 --sizein --sizeout --centroids  /home/user/conkat_seq/output/sample_name_OTU.fna --uc  /home/user/conkat_seq/output/sample_name_OTU.txt
+vsearch v2.13.1_linux_x86_64, 377.3GB RAM, 64 cores
+https://github.com/torognes/vsearch
+
+Reading file  /home/user/conkat_seq/output/sample_name_SORTED.fna 100%
+146149290 nt in 695949 seqs, min 210, max 210, avg 210
+Masking 100%
+Sorting by abundance 100%
+Counting k-mers 100%
+Clustering 100%
+Sorting clusters 100%
+Writing clusters 100%
+Clusters: 69765 Size min 3, max 37910, avg 10.0
+Singletons: 34863, 5.0% of seqs, 50.0% of clusters
+Amplicon domain clustering table saved ->  /home/user/conkat_seq/output/sample_name_OTU.txt...
+Amplicon domain centroid sequences saved ->  /home/user/conkat_seq/output/sample_name_OTU.fna...
+```
+
+### <a name="runfilter"></a> ii. Run filter_clustering_table.py
+
+
+
+
+### <a name="runconkat"></a> iii. Run conkat_seq.py
 
 
 
