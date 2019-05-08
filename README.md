@@ -20,10 +20,10 @@ Table of Contents
   3. [Compute and Graph clustering table](#graph) (conkat_seq.py)
 
 - [Example](#example)
-  1. [Initialize](#sampledata)
-  2. [Run build_clustering_table.py](#sampledata)
-  3. [Run filter_clustering_table.py](#sampledata)
-  4. [Run conkat_seq.py](#sampledata)
+  1. [Initialize](#initialize)
+  2. [Run build_clustering_table.py](#runbuild)
+  3. [Run filter_clustering_table.py](#runfilter)
+  4. [Run conkat_seq.py](#runconkat)
         
 ## <a name="inputandoutput"></a> Data Input/Output
 
@@ -282,13 +282,16 @@ optional arguments:
 
 ## <a name="example"></a> Example
 
+### <a name="initialize"></a> i. Initialize
+
+### <a name="runbuild"></a> ii. Run build_clustering_table.py
+
+### <a name="runfilter"></a> iii. Run filter_clustering_table.py
+
+### <a name="runconkat"></a> iii. Run conkat_seq.py
 
 
-Sample Data
-From the terminal 
-Activate conda and go into directory of scripts
 
-https://rockefeller.app.box.com/s/rhrgw13ux6qdns0vax5i4cgyvgtfdyd7
 
 
 
