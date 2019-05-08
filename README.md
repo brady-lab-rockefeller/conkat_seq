@@ -20,12 +20,11 @@ Table of Contents
   3. [Compute and Graph clustering table](#graph) (conkat_seq.py)
 
 - [Example](#example)
-  1. [Sample Data](#sampledata)
-  2. [Run ConkatSeq](#sampledata)
-        *  [Initialize](#initialize)
-        *  [](#)
-        *  [](#downloadconkatseq)  
-
+  1. [Initialize](#sampledata)
+  2. [Run build_clustering_table.py](#sampledata)
+  3. [Run filter_clustering_table.py](#sampledata)
+  4. [Run conkat_seq.py](#sampledata)
+        
 ## <a name="inputandoutput"></a> Data Input/Output
 
 
@@ -282,6 +281,8 @@ optional arguments:
  ```
 
 ## <a name="example"></a> Example
+
+
 
 Sample Data
 From the terminal 
