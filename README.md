@@ -10,9 +10,9 @@ Table of Contents
 - [Installation](#installation)
   1. [Dependencies](##hardware)
   2. [Install](#install)
-        *  [ Git](#git)
+        *  [Git](#git)
         *  [Conda](#conda)
-        *  [ConkatSeq conda environment](#conkatseq)
+        *  [Conda environment setup](#conkatseq)
         *  [Download ConkatSeq](#downloadconkatseq)     
 - [Usage](#usage)
   1. [Generate clustering table](#table) (build_clustering_table.py)
@@ -20,7 +20,11 @@ Table of Contents
   3. [Compute and Graph clustering table](#graph) (conkat_seq.py)
 
 - [Example](#example)
-  
+  1. [Sample Data](#sampledata)
+  2. [Run ConkatSeq](#sampledata)
+        *  [Initialize](#initialize)
+        *  [](#)
+        *  [](#downloadconkatseq)  
 
 ## <a name="inputandoutput"></a> Data Input/Output
 
@@ -279,6 +283,9 @@ optional arguments:
 
 ## <a name="example"></a> Example
 
+Sample Data
+From the terminal 
+Activate conda and go into directory of scripts
 
 https://rockefeller.app.box.com/s/rhrgw13ux6qdns0vax5i4cgyvgtfdyd7
 
