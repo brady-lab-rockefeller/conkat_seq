@@ -84,17 +84,26 @@ python build_clustering_table.py  -i INPATH -o OUTPATH -s SAMPLE_NAME -l STRIP_L
 ```
 Arguments:  
 `-i INPATH` full, absolute path to folder containing the demultiplexed subpool FASTA files
+
 `-o OUTPUT` full, absolute path to where output files will be saved
+
 `-s SAMPLE_NAME` name to provide for the output files
+
 `-l STRIP_LEFT` number of bases to remove at the start of the reads (usually primer length)
+
 `-t TRUNCATE` length of sequence keep following bases removal (shorter sequences are discarded)
+
 `-c CLUSTER_ID`  minimum sequence identity for clustering (a fraction between 0.0 and 1.0, default 0.95)
 
 Optional arguments & flags:  
 `--host_path HOST_PATH`  full, absolute path to host reference genome in FASTA format. Matching reads will be removed
+
 `--threads THREADS`  threads to be used (default 1)
+
 `--verbose`  increas verbosity
+
 `--remove_files`  remove intermediate processeing files
+
 
 #### filter_clustering_table.py:
 
@@ -109,14 +118,22 @@ python filter_clustering_table.py  -i INPATH -s SAMPLE_NAME -mrs MIN_READ_SIZE -
 
 Arguments:  
 `-i INPATH` full, absolute path to folder containing the input files
-`-s SAMPLE_NAME` sample name matching the input files 
+
+`-s SAMPLE_NAME` sample name matching the input files
+
 `-mrs MIN_READ_SIZE` only cosndier amplicon with more reads than min_read_size
+
 `-rst  RELATIVE_SIZE_THRESHOLD` relative size threshold for removing amplicons with low reads within clusters (default 0.05)
+
 `-msp MIN_SUBPOOLS`  only consider amplicons detected in more than min_subpools subpools (default 3)
 
+
 Optional arguments & flags:  
+
 `--threads THREADS`  threads to be used (default 1)
+
 `--verbose`  increas verbosity
+
 
 #### conkat_seq.py:
 
@@ -132,18 +149,28 @@ python conkat_seq.py -l LIST_OF_CLUSTERING_DATAFRAMES  -o OUTPATH -a ALPHA -m MI
 
 Arguments:  
 `-l LIST_OF_CLUSTERING_DATAFRAMES` full, absolute path to folder containing the input files
-`-o OUTPUT` sample name matching the input files 
+
+`-o OUTPUT` sample name matching the input files
+
 `-a ALPHA` only cosndier amplicon with more reads than min_read_size
+
 `-m MIN_SHARED_OCCURANCES` relative size threshold for removing amplicons with low reads within clusters (default 0.05)
+
 `-msp MIN_SUBPOOLS`  only consider amplicons detected in more than min_subpools subpools (default 3)
 
 Optional arguments & flags:  
 `----merge_similar_id MERGE_SIMILAR_ID` identify threshold for merging similar domains within network (default 0.9)
+
 `--threads THREADS`  threads to be used (default 1)
+
 `--flag_edges` run monte carlo analysis to flag edges potenially affected by index swapping (default False)
+
 `--threads THREADS`  threads to be used (default 1)
+
 `--verbose`  increas verbosity
+
 `--override`  re-write existing files
+
 
 
 https://rockefeller.app.box.com/s/rhrgw13ux6qdns0vax5i4cgyvgtfdyd7
