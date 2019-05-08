@@ -11,6 +11,7 @@ Table of Contents
   2. [Filter clustering table](#polish) (filter_clustering_table.py)
   3. [Compute and Graph clustering table](#graph) (conkat_seq.py)
 - [Example](#example)
+- [Contact](#contact)
   
 ## How it works
 
@@ -278,7 +279,7 @@ merging similar domains within networks...
 200
 Done!
 ```
-
+### <a name="contact"></a> Contact
 
 
 
