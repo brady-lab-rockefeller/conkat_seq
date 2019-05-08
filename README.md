@@ -59,15 +59,19 @@ To identify pairs of biosynthetic domains that originate from physically cluster
 
 ## Installation and Dependencies 
 
-CONKAT-seq is available for Linux and MacOS platforms and requires the installation of [Python (v2.7.x)] and VSEARCH (v2.9.1+). In order to use "clear_host_reads" mode (removal of amplicons matching library host genome, ususally E. coli) BBMap and SAMTOOLS (v3.0.0+) are needed to be in the user path.
+CONKAT-seq is available for Linux and MacOS platforms and requires the installation of **[Python (v2.7.x)](https://www.python.org/downloads/release/python-2716/)** and **[VSEARCH (v2.9.1+)](https://github.com/torognes/vsearch)**. 
 
-#Required Python libraries
+In order to use "clear_host_reads" mode (removal of amplicons matching library host genome, ususally E. coli) **[BBMap](https://sourceforge.net/projects/bbmap/)** and **[SAMTOOLS (v3.0.0+)](http://samtools.sourceforge.net/)** are needed to be in the user path.
+
+## Required Python libraries
 - **[biopython](https://biopython.org/)** 
 - **[pandas](https://pandas.pydata.org)**
 - **[scipy](https://www.scipy.org/)**  
 - **[matplotlib](https://matplotlib.org/)** 
 - **[statsmodel](https://www.statsmodels.org/stable/index.html)** 
-- **[networkx](https://networkx.github.io/)**  
+- **[networkx](https://networkx.github.io/)** 
+
+## **Alternatively users can also install the conda package manager and create a conda environment with all of the required dependencies installed and will be able to use and run CONKAT-seq in the conda environment:**
 
 ```
 conda install -c anaconda pandas networkx statsmodels scipy
@@ -91,27 +95,29 @@ usage: build_clustering_table.py [-h] -i INPATH -o OUTPATH -s SAMPLE_NAME -l
                                  
 python build_clustering_table.py  -i INPATH -o OUTPATH -s SAMPLE_NAME -l STRIP_LEFT -t TRUNCATE -c CLUSTER_ID
 ```
-Arguments:  
-`-i INPATH` full, absolute path to folder containing the demultiplexed subpool FASTA files
+**Arguments (required):** 
 
-`-o OUTPUT` full, absolute path to where output files will be saved
+`-i INPATH` full, **absolute path** to folder containing the demultiplexed subpool FASTA files
+
+`-o OUTPUT` full, **absolute path** to where output files will be saved
 
 `-s SAMPLE_NAME` name to provide for the output files
 
 `-l STRIP_LEFT` number of bases to remove at the start of the reads (usually primer length)
 
-`-t TRUNCATE` length of sequence keep following bases removal (shorter sequences are discarded)
+`-t TRUNCATE` length of sequence to keep following bases removal (shorter sequences are discarded)
 
 `-c CLUSTER_ID`  minimum sequence identity for clustering (a fraction between 0.0 and 1.0, default 0.95)
 
-Optional arguments & flags:  
-`--host_path HOST_PATH`  full, absolute path to host reference genome in FASTA format (matching reads are removed)
+**Optional arguments & flags:**  
+
+`--host_path HOST_PATH`  full, **absolute path** to host reference genome in FASTA format (matching reads are removed)
 
 `--threads THREADS`  threads to be used (default 1)
 
-`--verbose`  increas verbosity
+`--verbose`  increasw verbosity
 
-`--remove_files`  remove intermediate processeing files
+`--remove_files`  remove intermediate processing files
 
 
 #### filter_clustering_table.py:
@@ -125,8 +131,9 @@ usage: filter_clustering_table.py [-h] -i INPATH -s SAMPLE_NAME -mrs
 python filter_clustering_table.py  -i INPATH -s SAMPLE_NAME -mrs MIN_READ_SIZE -rst RELATIVE_SIZE_THRESHOLD -msp MIN_SUBPOOLS 
 ```
 
-Arguments:  
-`-i INPATH` full, absolute path to folder containing the input files
+**Arguments (required):** 
+
+`-i INPATH` full, **Arguments (required):**  to folder containing the input files
 
 `-s SAMPLE_NAME` sample name matching the input files
 
@@ -137,11 +144,12 @@ Arguments:
 `-msp MIN_SUBPOOLS`  only consider amplicons detected in more than min_subpools subpools (default 3)
 
 
-Optional arguments & flags:  
+**Optional arguments & flags:**  
+ 
 
 `--threads THREADS`  threads to be used (default 1)
 
-`--verbose`  increas verbosity
+`--verbose`  increase verbosity
 
 
 #### conkat_seq.py:
@@ -156,17 +164,17 @@ usage: conkat_seq.py [-h] -l LIST_OF_CLUSTERING_DATAFRAMES
 python conkat_seq.py -l LIST_OF_CLUSTERING_DATAFRAMES  -o OUTPATH -a ALPHA -m MIN_SHARED_OCCURANCES  --flag_edges 
 ```
 
-Arguments:  
+**Arguments (required):** 
 
 `-l LIST_OF_CLUSTERING_DATAFRAMES` list of one or more domain clustering dataframes
 
-`-o OUTPATH` full, absolute path of folder to save results
+`-o OUTPATH` full, **Arguments (required):**  of folder to save results
 
 `-a ALPHA` maximal adjusted p-value threshold (default 10^-6)
 
 `-m MIN_SHARED_OCCURANCES` only analyze domain pairs with co-occurances >min_shared_occurances (default 3)
 
-Optional arguments & flags:
+**Optional arguments & flags:**  
 
 `--merge_similar_id MERGE_SIMILAR_ID` identify threshold for merging similar domains within network (default 0.9)
 
@@ -176,7 +184,7 @@ Optional arguments & flags:
 
 `--threads THREADS`  threads to be used (default 1)
 
-`--verbose`  increas verbosity
+`--verbose`  increase verbosity
 
 `--override`  re-write existing files
 
