@@ -1,4 +1,4 @@
-<img src="https://github.com/brady-lab-rockefeller/conkat_seq/blob/master/resources/conkat_seq_logo.png" width=60, height=60 align="left" />
+<img src="https://github.com/brady-lab-rockefeller/conkat_seq/blob/master/resources/conkat_seq_logo.jpeg" width=60, height=60 align="left" />
 
 # CONKAT-seq 
 
@@ -50,7 +50,7 @@ Parasing of the domain clustering table into a dataframe and filtering of domain
 ---
 **Steps 3: conkat_seq.py**
 
-Pairwise statisical analysis of pairwise domain co-occurances. 
+Pairwise statisical analysis of pairwise domain co-occurrences. 
 
 To identify pairs of biosynthetic domains that originate from physically clustered metagenomic DNA, a 2x2 contingency table (the number of subpools containing both domain variants, one of the two only, or none of them) is constructed for each pair of domain sequence variants the co-occurrence significance is computed using Fisher's exact test. Pairs of domains showing non-random association based on p-value cutoff vlaue are predicted to be physically linked, and hence predicted to belong to the same gene cluster. Based on a pairwise list of statistically significant links a graph representation of domain networks is constructed, where nodes represent cluster of biosynthetic domains and edges link domains that are predicted to be physically co-clustered.
 
@@ -160,11 +160,11 @@ python filter_clustering_table.py  -i INPATH -s SAMPLE_NAME -mrs MIN_READ_SIZE -
 ```
 usage: conkat_seq.py [-h] -l LIST_OF_CLUSTERING_DATAFRAMES
                      [LIST_OF_CLUSTERING_DATAFRAMES ...] -o OUTPATH
-                     [-m MIN_SHARED_OCCURANCES] [-a ALPHA]
+                     [-m MIN_SHARED_OCCURRENECS] [-a ALPHA]
                      [--merge_similar_id MERGE_SIMILAR_ID] [--threads THREADS]
                      --flag_edges [--verbose] [--override]
 
-python conkat_seq.py -l LIST_OF_CLUSTERING_DATAFRAMES  -o OUTPATH -a ALPHA -m MIN_SHARED_OCCURANCES  --flag_edges 
+python conkat_seq.py -l LIST_OF_CLUSTERING_DATAFRAMES  -o OUTPATH -a ALPHA -m MIN_SHARED_OCCURRENECS  --flag_edges 
 ```
 
 **Arguments (required):** 
@@ -175,7 +175,7 @@ python conkat_seq.py -l LIST_OF_CLUSTERING_DATAFRAMES  -o OUTPATH -a ALPHA -m MI
 
 `-a ALPHA` maximal adjusted p-value threshold (default 10^-6)
 
-`-m MIN_SHARED_OCCURANCES` only analyze domain pairs with co-occurances >min_shared_occurances (default 3)
+`-m MIN_SHARED_OCCURRENECS` only analyze domain pairs with co-occurrences >min_shared_occurrences (default 3)
 
 **Optional arguments & flags:**  
 
@@ -270,7 +270,7 @@ Third, run the conkat_seq.py script on the output data produced from the previou
 ```
 [user@terminal conkat_seq]$ python conkat_seq.py -l /home/user/conkat_seq/output/sample_name_OTU.csv  -o /home/user/conkat_seq/output/ -a 0.05 -m 3  --threads 20
 Concatenating domain dataframes...
-Calculating domain co-occurances...
+Calculating domain co-occurrences...
 Building domain clustering graph...
 Constructing network --> fdr_tsbky 0.05
 978 nodes and 1320 edges found...
