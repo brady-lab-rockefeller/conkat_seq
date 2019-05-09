@@ -21,7 +21,7 @@ Table of Contents
 
 #### Pre-processing steps (repeat for every targeted domain amplicon dataset)
 ---
-**Process 1: build_clustrering_table.py** 
+**Step 1: build_clustrering_table.py** 
 
 Pre-processing (primer removal, length trimming, dereplication) of subpool-demultiplexed amplicon reads. 
 
@@ -35,7 +35,7 @@ Processed reads from all library subpools are clustered using VSEARCH implementa
     1. Domain amplicons clustering table in a UCLUST-format tabbed text format [sample_name.txt]
     2. Sequences of cluster centroids in a FASTA format	[sample_name.fna]
 
-**Process 2:filter_clustrering_table.py** 
+**Step 2: filter_clustrering_table.py** 
 
 Parasing of the domain clustering table into a dataframe and filtering of domain varinats with low read counts or low number of subpool occurrences.
 
@@ -48,7 +48,7 @@ Parasing of the domain clustering table into a dataframe and filtering of domain
 
 #### Network analysis (Once per metagenomic library. Can integrate multiple domain amplicon datasets.)
 ---
-**Process 3: conkat_seq.py**
+**Steps 3: conkat_seq.py**
 
 Pairwise statisical analysis of pairwise domain co-occurances. 
 
@@ -169,7 +169,7 @@ python conkat_seq.py -l LIST_OF_CLUSTERING_DATAFRAMES  -o OUTPATH -a ALPHA -m MI
 
 **Arguments (required):** 
 
-`-l LIST_OF_CLUSTERING_DATAFRAMES` list of one or more domain clustering dataframes
+`-l LIST_OF_CLUSTERING_DATAFRAMES` list of one or more domain clustering dataframe files
 
 `-o OUTPATH` full, **absolute path**  to save output files 
 
