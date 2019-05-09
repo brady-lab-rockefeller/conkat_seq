@@ -162,7 +162,7 @@ usage: conkat_seq.py [-h] -l LIST_OF_CLUSTERING_DATAFRAMES
                      [LIST_OF_CLUSTERING_DATAFRAMES ...] -o OUTPATH
                      [-m MIN_SHARED_OCCURRENECS] [-a ALPHA]
                      [--merge_similar_id MERGE_SIMILAR_ID] [--threads THREADS]
-                     --flag_edges [--verbose] [--override]
+                     [--flag_edges] [--verbose] [--override]
 
 python conkat_seq.py -l LIST_OF_CLUSTERING_DATAFRAMES  -o OUTPATH -a ALPHA -m MIN_SHARED_OCCURRENECS  --flag_edges 
 ```
