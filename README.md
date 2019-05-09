@@ -1,4 +1,4 @@
-<img src="https://github.com/brady-lab-rockefeller/conkat_seq/blob/master/resources/conkat_seq_logo.png" width=50, height=50 align="left" />
+<img src="https://github.com/brady-lab-rockefeller/conkat_seq/blob/master/resources/conkat_seq_logo.png" width=60, height=60 align="left" />
 
 # CONKAT-seq 
 
