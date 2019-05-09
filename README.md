@@ -25,11 +25,11 @@ Table of Contents
 
 Pre-processing (primer removal, length trimming, dereplication) of subpool-demultiplexed amplicon reads. 
 
-Processed reads from all library subpools are clustered using VSEARCH implementation of the USEARCH algorithim. Each cluster contains a set of highly similar amplicon sequences (<95% identity) originating from one or more library subpools.
+Processed reads from all library subpools are clustered using VSEARCH implementation of the USEARCH algorithm. Each cluster contains a set of highly similar amplicon sequences (<95% identity) originating from one or more library subpools.
 
 - input:
     1. Folder containing amplicon sequencing fasta file(s). Files must be demultiplexed according to subpool amplicon barcode.  
-    For example, if the targeted domain amplifcation was performed on a 384 subpools library (i.e., 384 PCR reactions), the demultiplexed data will consist of 384 individual FASTA files representing each one subpool sample.
+    For example, if the targeted domain amplification was performed on a 384 subpools library (i.e., 384 PCR reactions), the demultiplexed data will consist of 384 individual FASTA files representing each one subpool sample.
     
 - output
     1. Domain amplicons clustering table in a UCLUST-format tabbed text format [sample_name.txt]
@@ -37,7 +37,7 @@ Processed reads from all library subpools are clustered using VSEARCH implementa
 
 **Step 2: filter_clustrering_table.py** 
 
-Parasing of the domain clustering table into a dataframe and filtering of domain varinats with low read counts or low number of subpool occurrences.
+Parasing of the domain clustering table into a dataframe and filtering of domain variants with low read counts or low number of subpool occurrences.
 
 - input
     1. Domain amplicons clustering table in a UCLUST-format tabbed text format [sample_name.txt]
@@ -50,9 +50,9 @@ Parasing of the domain clustering table into a dataframe and filtering of domain
 ---
 **Steps 3: conkat_seq.py**
 
-Pairwise statisical analysis of pairwise domain co-occurrences. 
+Pairwise statistical analysis of pairwise domain co-occurrences. 
 
-To identify pairs of biosynthetic domains that originate from physically clustered metagenomic DNA, a 2x2 contingency table (the number of subpools containing both domain variants, one of the two only, or none of them) is constructed for each pair of domain sequence variants the co-occurrence significance is computed using Fisher's exact test. Pairs of domains showing non-random association based on p-value cutoff vlaue are predicted to be physically linked, and hence predicted to belong to the same gene cluster. Based on a pairwise list of statistically significant links a graph representation of domain networks is constructed, where nodes represent cluster of biosynthetic domains and edges link domains that are predicted to be physically co-clustered.
+To identify pairs of biosynthetic domains that originate from physically clustered metagenomic DNA, a 2x2 contingency table (the number of subpools containing both domain variants, one of the two only, or none of them) is constructed for each pair of domain sequence variants the co-occurrence significance is computed using Fisher's exact test. Pairs of domains showing non-random association based on p-value cutoff value are predicted to be physically linked, and hence predicted to belong to the same gene cluster. Based on a pairwise list of statistically significant links a graph representation of domain networks is constructed, where nodes represent cluster of biosynthetic domains and edges link domains that are predicted to be physically co-clustered.
 
 - input
     1. One or more filtered domain clustering dataframe [sample_name.csv]
@@ -64,7 +64,7 @@ To identify pairs of biosynthetic domains that originate from physically cluster
 
 CONKAT-seq is available for Linux and MacOS platforms and requires the installation of **[Python (v2.7.x)](https://www.python.org/downloads/release/python-2716/)** and **[VSEARCH (v2.9.1+)](https://github.com/torognes/vsearch)**. 
 
-In order to use "clear_host_reads" mode (removal of amplicons matching library host genome, ususally E. coli) **[BBMap](https://sourceforge.net/projects/bbmap/)** and **[SAMTOOLS (v3.0.0+)](http://samtools.sourceforge.net/)** are needed to be in the user path.
+In order to use "clear_host_reads" mode (removal of amplicons matching library host genome, usually E. coli) **[BBMap](https://sourceforge.net/projects/bbmap/)** and **[SAMTOOLS (v3.0.0+)](http://samtools.sourceforge.net/)** are needed to be in the user path.
 
 ## Required Python libraries
 - **[biopython](https://biopython.org/)** 
@@ -140,7 +140,7 @@ python filter_clustering_table.py  -i INPATH -s SAMPLE_NAME -mrs MIN_READ_SIZE -
 
 `-s SAMPLE_NAME` sample name matching the input files
 
-`-mrs MIN_READ_SIZE` only cosndier amplicon with more reads than min_read_size
+`-mrs MIN_READ_SIZE` only consider amplicon with more reads than min_read_size
 
 `-rst  RELATIVE_SIZE_THRESHOLD` relative size threshold for removing amplicons with low reads (fraction of reads in comparison to max within cluster, default 0.05)
 
@@ -183,7 +183,7 @@ python conkat_seq.py -l LIST_OF_CLUSTERING_DATAFRAMES  -o OUTPATH -a ALPHA -m MI
 
 `--threads THREADS`  threads to be used (default 1)
 
-`--flag_edges` run monte carlo analysis to flag edges potenially affected by index swapping (default False)
+`--flag_edges` run monte carlo analysis to flag edges potentially affected by index swapping (default False)
 
 `--threads THREADS`  threads to be used (default 1)
 
