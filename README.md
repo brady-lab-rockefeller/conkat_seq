@@ -134,7 +134,7 @@ python filter_clustering_table.py  -i INPATH -s SAMPLE_NAME -mrs MIN_READ_SIZE -
 
 **Arguments (required):** 
 
-`-i INPATH` full, **Arguments (required):**  to folder containing the input files
+`-i INPATH` full, **absolute path** to the folder containing the input files
 
 `-s SAMPLE_NAME` sample name matching the input files
 
@@ -169,7 +169,7 @@ python conkat_seq.py -l LIST_OF_CLUSTERING_DATAFRAMES  -o OUTPATH -a ALPHA -m MI
 
 `-l LIST_OF_CLUSTERING_DATAFRAMES` list of one or more domain clustering dataframes
 
-`-o OUTPATH` full, **Arguments (required):**  of folder to save results
+`-o OUTPATH` full, **absolute path**  to save output files 
 
 `-a ALPHA` maximal adjusted p-value threshold (default 10^-6)
 
