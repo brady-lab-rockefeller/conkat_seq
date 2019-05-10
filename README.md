@@ -6,8 +6,8 @@ CONKAT-seq (co-occurrence network analysis of targeted sequences) is targeted se
 
 Table of Contents
 -----------------
-- [How it works](#inputandoutput)
-- [Installation & Dependencies](#installation)
+- [How it works](#howitworkds)
+- [Installation & Dependencies](#Installation)
 - [Usage](#usage)
   1. [Generate clustering table](#table) (build_clustering_table.py)
   2. [Filter clustering table](#polish) (filter_clustering_table.py)
@@ -15,7 +15,7 @@ Table of Contents
 - [Example](#example)
 - [Contact](#contact)
   
-## How it works
+## <a name="howitworkds"></a> How it works
 
 **CONKAT-seq** requires 3 processing steps to process subpool-demultiplexed amplicon sequencing data (FASTA format) to predicted networks of chromosomally co-clustered biosynthetic domains (GraphML format).
 
@@ -60,7 +60,7 @@ To identify pairs of biosynthetic domains that originate from physically cluster
 - output
     1. Predicted networks of chromosomally co-clustered biosynthetic domains in a GraphML format [sample_name.graphml]
 
-## Installation and Dependencies 
+## <a name="Installation"></a> Installation and Dependencies 
 
 CONKAT-seq is available for Linux and MacOS platforms and requires the installation of **[Python (v2.7.x)](https://www.python.org/downloads/release/python-2716/)** and **[VSEARCH (v2.9.1+)](https://github.com/torognes/vsearch)**. 
 
