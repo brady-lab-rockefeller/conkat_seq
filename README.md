@@ -124,7 +124,7 @@ python build_clustering_table.py  -i INPATH -o OUTPATH -s SAMPLE_NAME -l STRIP_L
 `--remove_files`  remove intermediate processing files
 
 
-#### <a name="graph"></a> filter_clustering_table.py:
+#### <a name="polish"></a> filter_clustering_table.py:
 
 ```
 usage: filter_clustering_table.py [-h] -i INPATH -s SAMPLE_NAME -mrs
@@ -156,7 +156,7 @@ python filter_clustering_table.py  -i INPATH -s SAMPLE_NAME -mrs MIN_READ_SIZE -
 `--verbose`  increase verbosity
 
 
-#### <a name="polish"></a> conkat_seq.py:
+#### <a name="graph"></a> conkat_seq.py:
 
 ```
 usage: conkat_seq.py [-h] -l LIST_OF_CLUSTERING_DATAFRAMES
