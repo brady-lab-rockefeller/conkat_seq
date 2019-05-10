@@ -74,7 +74,7 @@ In order to use "clear_host_reads" mode (removal of amplicons matching library h
 - **[statsmodel](https://www.statsmodels.org/stable/index.html)** 
 - **[networkx](https://networkx.github.io/)** 
 
-#### **Alternatively users can also install the conda package manager and create a conda environment with all of the required dependencies installed and will be able to use and run CONKAT-seq in the conda environment:**
+#### **Alternatively users can also install the [conda package manager](https://www.anaconda.com/distribution/) and create a conda environment with all of the required dependencies installed and will be able to use and run CONKAT-seq in the conda environment:**
 
 ```
 conda install -c anaconda pandas networkx statsmodels scipy
@@ -88,7 +88,8 @@ git clone https://github.com/brady-lab-rockefeller/conkat_seq
 ```
 ## Usage
 
-#### build_clustering_table.py:
+
+####  <a name="table"></a> build_clustering_table.py:
 
 ```
 usage: build_clustering_table.py [-h] -i INPATH -o OUTPATH -s SAMPLE_NAME -l
