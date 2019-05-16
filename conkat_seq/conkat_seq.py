@@ -127,7 +127,7 @@ if __name__ == "__main__":
 
     if os.path.isfile(domain_occurances_table_fullpath):
         log('File exists --> %s' % domain_occurances_table_fullpath)
-        domain_occurances_table
+        domain_occurances_table = pd.read_csv(domain_occurances_table_fullpath,index_col=0)
     else:
         log('Calculating domain co-occurances...')
         domain_occurances_table = calc_domain_occurances(merged_filtered_clustering_table, 
