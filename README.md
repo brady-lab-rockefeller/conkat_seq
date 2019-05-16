@@ -174,7 +174,7 @@ python conkat_seq.py -l LIST_OF_CLUSTERING_DATAFRAMES  -o OUTPATH -a ALPHA -m MI
 
 `-o OUTPATH` full, **absolute path**  to save output files 
 
-`-a ALPHA` maximal adjusted p-value threshold (default 10^-6)
+`-a ALPHA` maximal adjusted p-value threshold (default 1e-6)
 
 `-m MIN_SHARED_OCCURRENECS` only analyze domain pairs with co-occurrences >min_shared_occurrences (default 3)
 
@@ -269,7 +269,7 @@ Parsed and filtered domain clustering dataframe saved -> /home/user/conkat_seq/o
 Third, run the conkat_seq.py script on the output data produced from the previous step. You must provide the **ABSOLUTE** path of the location to the domain clustering dataframe(s) (OTU.csv file(s)) produced from the previous step as the input option for this step, and desired location of the outputs.
 
 ```
-[user@terminal conkat_seq]$ python conkat_seq.py -l /home/user/conkat_seq/output/sample_name_OTU.csv  -o /home/user/conkat_seq/output/ -a 0.05 -m 3  --threads 20
+[user@terminal conkat_seq]$ python conkat_seq.py -l /home/user/conkat_seq/output/sample_name_OTU.csv  -o /home/user/conkat_seq/output/ -a 1e-6 -m 3  --threads 20
 Concatenating domain dataframes...
 Calculating domain co-occurrences...
 Building domain clustering graph...
