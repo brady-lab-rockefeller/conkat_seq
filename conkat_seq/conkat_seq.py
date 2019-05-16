@@ -65,13 +65,13 @@ if __name__ == "__main__":
 
     parser.add_argument('-a', '--alpha',
                         help='maximal adjusted p-value threshold, default = 10**-6',
-                        required=False, type=float, default=10**-6)
+                        required=False, type=str, default=10**-6)
 
     parser.add_argument('--merge_similar_id', help='identify threshold for merging similar domains within networks, default = 0.9',
                         required=False, type=float, default=0.9)
 
-    parser.add_argument('--threads', help='number of threads to use by vsearch, default = 1',
-                        type=int, default=1)
+    parser.add_argument('--threads', help='number of threads to use by vsearch, default = 20',
+                        type=int, default=20)
 
     parser.add_argument('--flag_edges', help='run monte carlo analysis to flag edges potenially affected by index swapping, default = False',
                         required=False, action='store_true')
@@ -90,7 +90,11 @@ if __name__ == "__main__":
     OUTPATH = args.outpath
 
     min_pair_count = args.min_shared_occurances
-    alpha = args.alpha 
+    alpha = float(eval(args.alpha))
+    if alpha < 0:
+        print('Negative alpha value -> %s' % alpha )
+        sys.exit()
+
 
     merge_similar_id = args.merge_similar_id
     flag_edges = args.flag_edges
