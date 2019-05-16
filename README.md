@@ -282,4 +282,4 @@ merging similar domains within networks...
 200
 Done!
 ```
-The network out network file [.grpahml] could be visualized using **[Cytoscape](https://cytoscape.org/)** or other network analysis software
+The network output files [.grpahml] could be visualized using **[Cytoscape](https://cytoscape.org/)** or other network analysis software
