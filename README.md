@@ -29,8 +29,8 @@ Processed reads from all library subpools are clustered using VSEARCH implementa
 
 - input:
     1. Folder containing amplicon sequencing fasta file(s). Files must be demultiplexed according to subpool amplicon barcode.  
-    For example, if the targeted domain amplification was performed on a 384 subpools library (i.e., 384 PCR reactions), the demultiplexed data will consist of 384 individual FASTA files representing each one subpool sample.
-    
+    For example, if the targeted domain amplification was performed on a 384 subpools library (i.e., 384 PCR reactions), the demultiplexed data will consist of 384 individual FASTA files of merged forward and reverse reads, each file representing one subpool sample.
+        
 - output
     1. Domain amplicons clustering table in a UCLUST-format tabbed text format [sample_name.txt]
     2. Sequences of cluster centroids in a FASTA format	[sample_name.fna]
