@@ -170,7 +170,7 @@ python conkat_seq.py -l LIST_OF_CLUSTERING_DATAFRAMES  -o OUTPATH -a ALPHA -m MI
 
 **Arguments (required):** 
 
-`-l LIST_OF_CLUSTERING_DATAFRAMES` list of one or more domain clustering dataframe files
+`-l LIST_OF_CLUSTERING_DATAFRAMES` list of one or more domain clustering dataframe files (space seperated for each dataframe file)
 
 `-o OUTPATH` full, **absolute path**  to save output files 
 
