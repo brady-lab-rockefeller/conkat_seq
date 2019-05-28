@@ -102,7 +102,7 @@ def calc_domain_occurances(filtered_clustering_table, MIN_PAIR_COUNT=3, verb=Fal
     df['a'] = df['count']
     df['b'] = df['Ov1'] - df['count']
     df['c'] = df['Ov2'] - df['count']
-    df['d'] = Nwells- df['count']
+    df['d'] = Nwells-(df['a'] + df['b'] + df['c'])
 
     df['fisher'] = df.apply(lambda row: calc_fisher(row['a'],row['b'],row['c'],row['d']),axis=1).values
     df['pvalue'] = df.fisher.apply(lambda x: x[1] )
