@@ -9,6 +9,7 @@ Parameters:
     outpath (str): results output directory
     min_shared_occurances (int): only analyze domain pairs with co-occurances > min_shared_occurances
     alpha (float) : maximal adjusted p-value threshold, default = 10**-6
+    fdr (True/False): p-value correction for multiple tests using two-stage Benjamini, Krieger, & Yekutieli, default = True'
     merge_similar (float) : identify threshold for merging similar domains within networks, default = 0. (0 to skip)
     threads (int): number of threads to use by vsearch, default = 1
     
@@ -67,6 +68,10 @@ if __name__ == "__main__":
                         help='maximal adjusted p-value threshold, default = 10**-6',
                         required=False, type=str, default=10**-6)
 
+    parser.add_argument('--fdr',
+                        help='p-value correction for multiple tests using two-stage Benjamini, Krieger, & Yekutieli (True/False)',
+                        required=False, type=str, default='True')
+
     parser.add_argument('--merge_similar_id', help='identify threshold for merging similar domains within networks, default = 0.9',
                         required=False, type=float, default=0.9)
 
@@ -102,6 +107,12 @@ if __name__ == "__main__":
     threads = args.threads                     
     verbose = args.verbose
     override = args.override
+
+    fdr = args.fdr
+    if fdr == 'False':
+        method = 'pvalue'
+    else:
+        method = 'fdr_tsbky'
 
     ###
 
@@ -146,7 +157,8 @@ if __name__ == "__main__":
     else:
         log('Building domain clustering graph...')
         G = build_graph(domain_occurances_table, merged_filtered_clustering_table, 
-            alpha, method='fdr_tsbky')
+            alpha, method)
+
         nx.write_graphml(G, networkFile)
 
     #flag hop
