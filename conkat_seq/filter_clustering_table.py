@@ -18,6 +18,7 @@ Parameters:
 
 import argparse
 import os
+import sys
 import pandas as pd
 from Bio import SeqIO
 import re
