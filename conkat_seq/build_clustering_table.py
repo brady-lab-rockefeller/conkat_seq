@@ -114,7 +114,8 @@ if __name__ == "__main__":
                '--fastaout %s '
                '--fastq_stripleft %s '
                '--fastq_trunclen %s '
-               % (threads,input_full_path,output_full_path,strip_left,truncate)
+               '--fastq_minlen %s '
+               % (threads,input_full_path,output_full_path,strip_left,truncate, truncate)
               )
         
         if verbose:
@@ -133,7 +134,7 @@ if __name__ == "__main__":
                '--derep_fulllength %s '
                '--strand plus '
                '--output %s '
-               '-sizeout '
+               '--sizeout '
                '--fasta_width 0'
                % (threads,input_file,output_full_path)
               )
@@ -196,17 +197,19 @@ if __name__ == "__main__":
     input_file = merged_sorted_output_file
     centroids_filename = OUTPATH + sample_name + '_OTU.fna'
     table_filename = OUTPATH + sample_name + '_OTU.txt'
+    biom_filename = OUTPATH + sample_name + '_OTU.biom'
 
     cmd = ('vsearch '
-           '--threads %s ' 
-           '--cluster_size %s '
-           '--id %s '
-           '--iddef 1 '
-           '--sizein '
-           '--sizeout '
-           '--centroids %s '
-           '--uc %s'
-           % (threads,input_file,cluster_id,centroids_filename,table_filename)
+           ' --threads %s' 
+           ' --cluster_size %s'
+           ' --id %s'
+           ' --iddef 1'
+           ' --sizein'
+           ' --sizeout'
+           ' --centroids %s'
+           ' --uc %s'
+           ' --biom %s'
+           % (threads,input_file,cluster_id,centroids_filename,table_filename, biom_filename)
           )
 
 
