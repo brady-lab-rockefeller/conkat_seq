@@ -339,7 +339,7 @@ def merge_similar_nodes(G, cluster_id=0.9, min_net_size=3, threads=20, verb=Fals
         table_filename = os.path.join(tmpdir, table_filename)
 
         # Ensure the file is read/write by the creator only
-        saved_umask = os.umask(001)
+        saved_umask = os.umask(0o001)
 
         s = pd.Series(dict(zip(sub,sub)))
         s = s.map(clusterSize_dict).sort_values(ascending=False)
